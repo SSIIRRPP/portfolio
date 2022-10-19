@@ -1,0 +1,70 @@
+@import "../../styles/theme.scss";
+
+.ParagraphGenerator {
+  padding: 0.8rem;
+}
+
+span.Paragraph {
+  display: inline-block;
+}
+
+.Paragraph {
+  &__wrapper {
+    padding: 0.35rem 0;
+    & > * {
+      margin: 0;
+    }
+  }
+  padding: 0.8rem;
+  background-color: $text-background-color;
+  border-radius: 0.25rem;
+  position: relative;
+  box-shadow: $thin-box-shadow;
+  &.info-span {
+    padding: 0.4rem;
+    margin: 0.75rem 0.15rem !important;
+    white-space: nowrap;
+    font-size: 0.7rem;
+    color: $color-4;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+  &.f-s-l {
+    font-size: 1.2rem;
+  }
+  & a {
+    &:hover {
+      color: $color-4;
+    }
+  }
+  & * {
+    color: $color-5;
+  }
+}
+
+.d-block {
+  display: block;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.highlight-paragraph {
+  animation-name: highlight-paragraph-animation;
+  /* animation-iteration-count: 3;
+  animation-duration: 0.8s; */
+}
+
+@keyframes highlight-paragraph-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

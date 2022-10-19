@@ -1,0 +1,60 @@
+@import "../../../../styles/theme.scss";
+@import "../../../../styles/mixins.scss";
+
+.MainLanguages {
+  overflow: hidden;
+  margin-top: 1rem;
+  @include make-card($color-3);
+  opacity: 0;
+  grid-area: langs;
+  &__header {
+    & h3 {
+      margin: 0.5rem 0;
+      @include make-card($color-1);
+      text-align: center;
+    }
+  }
+  &__body {
+    display: grid;
+    grid-column: 1fr;
+  }
+  &__language {
+    @include make-card($color-4);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0.5rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    &--wrapper {
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &--header {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & img {
+        width: 20px;
+        margin-right: 0.5rem;
+      }
+      & h4 {
+        text-align: center;
+        margin: 0.35rem 0;
+        text-decoration: underline;
+        color: $color-2;
+      }
+    }
+    &--body {
+      & > div {
+        @include make-card-thin($color-2);
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

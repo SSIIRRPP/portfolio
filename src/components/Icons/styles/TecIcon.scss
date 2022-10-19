@@ -1,0 +1,54 @@
+@import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
+
+.TecIcon {
+  cursor: pointer;
+  padding: 0.1rem;
+  margin: 0.2rem;
+  background-color: $color-5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  box-shadow: $main-box-shadow;
+  overflow: hidden;
+  &__wrapper {
+    display: inline-block;
+    padding: 2px;
+  }
+  &__popover {
+    &--root {
+      z-index: 2;
+    }
+    &--wrapper {
+      background-color: $color-2 !important;
+    }
+    &--name {
+      font-weight: 700 !important;
+      text-align: center;
+    }
+    color: $color-5;
+  }
+  &__level {
+    padding: 0.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    &--title {
+      text-align: center;
+      margin: 0.35rem;
+      font-size: 0.9rem;
+      opacity: 1 !important;
+    }
+    &--stars {
+      @include make-card-thin($color-1);
+      padding: 0 0.75rem;
+      margin: 0.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

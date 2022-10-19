@@ -1,0 +1,106 @@
+@import "../../../../styles/theme.scss";
+@import "../../../../styles/mixins.scss";
+
+.DetailCourseBadge {
+  @include make-card($color-1);
+  padding: 1rem;
+  &__header {
+    & > h4 {
+      @include make-card-thin($color-3);
+      position: relative;
+      margin: 0.5rem 0;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-right: 35px;
+      cursor: pointer;
+      text-align: center;
+    }
+    &--openIcon {
+      position: absolute;
+      top: 55%;
+      right: 5px;
+      transform: translateY(-50%);
+    }
+  }
+  &__description {
+    @include make-card-thin($color-3);
+    &--title {
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+    &--body {
+      & > * {
+        padding: 0 !important;
+      }
+      padding: 0.2rem 0 !important;
+    }
+  }
+  &__body {
+    @include make-card-thin($color-3);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    &--item {
+      @include make-card-thin($color-2);
+      margin: 0.5rem;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      & > h5 {
+        background-color: $color-1;
+        text-align: center;
+        margin: 0;
+        padding: 0.75rem 0;
+      }
+      & > * {
+        &:last-child {
+          margin: 0.5rem !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+  &__date {
+    & > .DateShow {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+    }
+  }
+  &__hours {
+    & p {
+      font-size: 2rem;
+    }
+  }
+  &__certificate {
+    &--text {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .DetailCourseBadge {
+    &__body {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .DetailCourseBadge {
+    &__body {
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
+
+.TechStack {
+  &__wrapper {
+    @include make-card($color-2);
+  }
+  &__title {
+    & h4 {
+      margin: 0.25rem 0 0.5rem;
+      text-decoration: underline;
+      &:after {
+        content: ":";
+      }
+    }
+  }
+  &__body {
+  }
+  &__stackList {
+    margin: 0.15rem;
+    display: inline-block;
+    @include make-card($color-4);
+    &--title {
+      & h5 {
+        padding: 0.15rem;
+        margin: 0 0 0.5rem 0;
+        color: $color-2;
+        text-decoration: underline;
+      }
+    }
+  }
+}

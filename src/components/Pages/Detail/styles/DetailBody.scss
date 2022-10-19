@@ -1,0 +1,43 @@
+@import "../../../../styles/theme.scss";
+@import "../../../../styles/mixins.scss";
+
+.DetailBody {
+  & .ParagraphGenerator {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  padding: 1rem 0;
+  background-color: $color-3;
+  border-radius: 0.4rem;
+  opacity: 0;
+  &__openButton {
+    & > h2 {
+      @include underline-on-hover();
+      @include make-card($color-2);
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin: 0 1rem;
+      cursor: pointer;
+      text-align: center;
+    }
+    &--icon {
+      position: absolute;
+      top: 55%;
+      right: 10px;
+      transform: translateY(-50%);
+    }
+  }
+  &__expand {
+    /* margin: 1rem 0 0; */
+    & p {
+      text-align: center;
+    }
+  }
+  &__bodyList {
+    &--list {
+      padding-top: 0;
+      margin-top: -0.75rem;
+    }
+  }
+}

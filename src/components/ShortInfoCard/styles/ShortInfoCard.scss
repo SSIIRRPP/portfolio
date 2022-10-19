@@ -1,0 +1,62 @@
+@import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
+@import "../../../styles/animations.scss";
+
+.ShortInfoCard {
+  &__container {
+    @include make-card($main-background);
+    min-height: 300px;
+    margin: 0.5rem;
+    overflow: hidden;
+  }
+  opacity: 0;
+  min-height: 300px;
+  height: inherit;
+  background-color: $color-2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: $main-box-shadow;
+  &__title {
+    opacity: 0;
+    color: $color-5;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  &__link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.ShortInfoCardList {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem 4rem;
+}
+
+@media screen and (max-width: 1600px) {
+  .ShortInfoCardList {
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .ShortInfoCardList {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

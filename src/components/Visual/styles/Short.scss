@@ -1,0 +1,10 @@
+@import "../../../styles/theme.scss";
+
+.Short {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  opacity: 0;
+  color: $color-5;
+}

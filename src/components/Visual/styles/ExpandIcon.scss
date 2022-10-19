@@ -1,0 +1,18 @@
+@import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
+
+.ExpandIcon {
+  &.light {
+    fill: $color-5;
+  }
+  &.dark {
+    fill: $color-1;
+  }
+  &.open {
+    transform: rotate(-180deg);
+  }
+  &.closed {
+    animation-name: closed-expand-icon;
+  }
+  transition: transform 0.4s ease-in-out;
+}

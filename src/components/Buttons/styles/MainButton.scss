@@ -1,0 +1,66 @@
+@import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
+
+.MainButton {
+  &.light {
+    & > div {
+      &:after {
+        background-color: $color-4;
+      }
+    }
+    &:hover:not([disabled]) {
+      background-color: $color-5;
+      color: $color-1;
+    }
+    background-color: $color-4;
+    color: $color-5;
+  }
+  &.dark {
+    & > div {
+      &:after {
+        background-color: $color-4;
+      }
+    }
+    &:hover:not([disabled]) {
+      background-color: $color-2;
+    }
+    background-color: $color-1;
+    color: $color-5;
+  }
+  &.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > div {
+      text-align: center;
+    }
+  }
+  & > div {
+    @include underline-mixin();
+    width: 90%;
+    margin: 0;
+    padding: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &:hover:not([disabled]) {
+    & > div {
+      @include underline-mixin-trigger();
+    }
+    background-color: $color-3;
+    color: $color-5;
+    cursor: pointer;
+  }
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
+  padding: 0.5rem;
+  background-color: $color-5;
+  color: $color-1;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.4rem;
+  transition: background-color 0.25s, color 0.25s;
+}

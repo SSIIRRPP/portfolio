@@ -1,0 +1,70 @@
+@import "./theme.scss";
+@import "./animations.scss";
+@import "./mixins.scss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // hides recaptcha badge while not in contact page
+  & .grecaptcha-badge {
+    transition: opacity 0.3s ease-in-out, right 0.3s ease 0s !important;
+  }
+  &.hide-recaptcha {
+    & .grecaptcha-badge {
+      opacity: 0 !important;
+    }
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  color: $font-color;
+}
+
+main {
+  position: relative;
+  background-color: $color-2;
+}
+
+#content {
+  background-image: url("../assets/images/background.webp");
+  background-color: $color-3;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: saturation;
+  padding: 50px 0 100px;
+  // scrollbar styles
+  overflow: auto scroll;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-2;
+    outline: 1px solid $color-1;
+  }
+  & > .MuiContainer-root {
+    min-width: 380px !important;
+  }
+}
+
+#general-error {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

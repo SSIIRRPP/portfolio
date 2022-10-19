@@ -1,0 +1,50 @@
+@import "./theme.scss";
+
+@mixin underline-mixin {
+  &.light {
+    background-color: $color-1;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: $font-color;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom left;
+    transition: transform 0.2s ease-out !important ;
+  }
+  display: inline-block;
+  position: relative;
+}
+
+@mixin underline-mixin-trigger {
+  &:after {
+    transform: scaleX(1);
+  }
+}
+
+@mixin underline-on-hover {
+  @include underline-mixin();
+  &:hover:after {
+    transform: scaleX(1);
+  }
+}
+
+@mixin card-bone($color) {
+  background-color: $color;
+  border-radius: 0.4rem;
+  box-shadow: $main-box-shadow;
+}
+
+@mixin make-card($color) {
+  @include card-bone($color);
+  padding: 0.8rem;
+}
+
+@mixin make-card-thin($color) {
+  @include card-bone($color);
+  padding: 0.25rem;
+}

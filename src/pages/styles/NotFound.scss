@@ -1,0 +1,18 @@
+@import "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+
+.NotFound {
+  @include make-card($color-1);
+  padding: 3rem 2rem;
+  &__wrapper {
+    opacity: 0;
+    height: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  & * {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+
+.Detail {
+  @include make-card($color-1);
+  margin: 1rem 0;
+  padding: 1rem;
+  opacity: 0;
+  /* background-color: $color-1;
+  border-radius: 0.4rem; */
+  &__title {
+    margin: 0 0 0.8rem;
+    text-align: center;
+  }
+}

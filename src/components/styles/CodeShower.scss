@@ -1,0 +1,24 @@
+@import "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+
+code-shower {
+  @include make-card($color-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  & > h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    text-align: center;
+  }
+  & > pre {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

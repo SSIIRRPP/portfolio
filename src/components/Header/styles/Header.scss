@@ -1,0 +1,65 @@
+@import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
+
+.Header {
+  height: 100%;
+  padding: 0 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__lang {
+    &--container {
+      & svg {
+        color: $font-color;
+        fill: $font-color;
+        top: calc(40% - 0.5em);
+      }
+      @include underline-on-hover();
+      & ::before {
+        border-bottom: 1px solid transparent !important;
+      }
+    }
+    &--select {
+      &::after {
+        border-bottom: 2px solid $font-color !important;
+      }
+    }
+    &--image {
+      width: 25px;
+      height: 25px;
+      border: 1px solid $font-color;
+      border-radius: 50%;
+    }
+    &--popover {
+      background-color: $color-2 !important;
+    }
+    &--selected {
+      background-color: $color-1 !important;
+    }
+  }
+  &__after {
+    position: fixed;
+    top: 100px;
+    z-index: 3;
+    height: calc(100vw / 16);
+    max-height: 50px;
+    width: 100vw;
+    background-color: $main-background;
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+    transition: max-height 0.8s;
+  }
+  &__sidebarToggler {
+    padding: 0 0.25rem;
+    @include underline-on-hover();
+    cursor: pointer;
+  }
+}
+
+header {
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+  background-color: $main-background;
+}
