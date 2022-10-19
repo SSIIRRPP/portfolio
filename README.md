@@ -1,3 +1,3 @@
 # Visit my portfolio at:
 
-[jorgemananes.com](https://jorgemananes.com)
+[jorgemananes.com](https://www.jorgemananes.com)
