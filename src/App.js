@@ -37,7 +37,6 @@ const App = () => {
   return (
     <>
       <Header setOpenSidebar={setOpenSidebar} />
-      <div className="Header__after" />
       <main ref={mainRef}>
         <Sidebar
           open={openSidebar}
@@ -67,6 +66,7 @@ const App = () => {
             },
           }}
         >
+          <div className="Header__after" />
           <Layout mainRef={mainRef}>
             <ErrorBoundary>
               <Suspense fallback={<Fallback />}>
