@@ -19,12 +19,16 @@ const DetailCourseBadgeComp = (
       <div className="DetailCourseBadge__header">
         <LanguageConsumer noElement text={name}>
           {({ text, style }) => (
-            <h4 style={style} onClick={() => setOpen((s) => !s)}>
+            <MainButton
+              as="h4"
+              style={style}
+              onClick={() => setOpen((s) => !s)}
+            >
               {text}
               <div className="DetailCourseBadge__header--openIcon">
                 <ExpandIcon open={open} className="light" />
               </div>
-            </h4>
+            </MainButton>
           )}
         </LanguageConsumer>
       </div>
