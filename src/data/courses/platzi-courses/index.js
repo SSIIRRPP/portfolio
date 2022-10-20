@@ -280,6 +280,7 @@ const platziCourses = {
       </div>,
     ],
   },
+  totalHours: platziCoursesList.reduce((a, b) => a + b.hours, 0),
   courses: platziCoursesList,
   link: "https://platzi.com/p/JorgeSirp/",
 };

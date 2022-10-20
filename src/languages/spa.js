@@ -66,9 +66,11 @@ const spa = {
         mobileFirst: "Enfoque",
         mobile: "Dispositivos móviles",
         desktop: "Escritorio",
+        totalTime: "Tiempo total empleado",
+        hours: "Horas",
         Github: {
           private: "Privado",
-          visitRepo: "Visitar respositorio",
+          visitRepo: "Visitar repositorio",
         },
       },
       DetailBody: {

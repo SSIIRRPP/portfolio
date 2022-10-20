@@ -66,6 +66,8 @@ const en = {
         mobileFirst: "Main focus",
         mobile: "Mobile devices",
         desktop: "Desktop",
+        totalTime: "Total time spent",
+        hours: "Hours",
         Github: {
           private: "Private",
           visitRepo: "Visit repository",

@@ -54,6 +54,7 @@ const openBootcamp = {
       </div>,
     ],
   },
+  totalHours: openBootcampCourses.reduce((a, b) => a + b.hours, 0),
   courses: openBootcampCourses,
   link: "https://open-bootcamp.com",
 };
