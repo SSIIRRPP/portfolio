@@ -1,6 +1,6 @@
 import { useCallback, useState, useMemo, useRef } from "react";
 import AnimationStepper from "react-animation-stepper";
-import { useNavigate, Link as ReactRouterLink } from "react-router-dom";
+import { Link as ReactRouterLink } from "react-router-dom";
 import useAnimation from "../../hooks/useAnimation";
 import AnimationPlaceholder from "../util/AnimationPlaceholder";
 import Link from "../Visual/Link";
@@ -28,13 +28,7 @@ const ShortInfoCard = ({ info, children, iterator }) => {
     animations: "fade-to-bottom",
     keepActive: true,
   });
-
-  const navigate = useNavigate();
   const { title, id, link, short } = info;
-
-  /*   const goToPage = useCallback(() => {
-    navigate(`${id}`);
-  }, [navigate, id]); */
 
   const setCompleted = useCallback(
     () => setStepsCompleted(true),
