@@ -1,6 +1,6 @@
 import { useCallback, useState, useMemo, useRef } from "react";
 import AnimationStepper from "react-animation-stepper";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link as ReactRouterLink } from "react-router-dom";
 import useAnimation from "../../hooks/useAnimation";
 import AnimationPlaceholder from "../util/AnimationPlaceholder";
 import Link from "../Visual/Link";
@@ -32,14 +32,18 @@ const ShortInfoCard = ({ info, children, iterator }) => {
   const navigate = useNavigate();
   const { title, id, link, short } = info;
 
-  const goToPage = useCallback(() => {
+  /*   const goToPage = useCallback(() => {
     navigate(`${id}`);
-  }, [navigate, id]);
+  }, [navigate, id]); */
 
   const setCompleted = useCallback(
     () => setStepsCompleted(true),
     [setStepsCompleted]
   );
+
+  const stopPropagation = useCallback((e) => {
+    e.stopPropagation();
+  }, []);
 
   const components = useMemo(
     () => ({
@@ -52,7 +56,7 @@ const ShortInfoCard = ({ info, children, iterator }) => {
         />
       ),
       link: link ? (
-        <Link className="ShortInfoCard__link" link={link} />
+        <Link className="ShortInfoCard__link" link={link} useExternalLink />
       ) : (
         <AnimationPlaceholder className="ShortInfoCard__link" />
       ),
@@ -92,7 +96,7 @@ const ShortInfoCard = ({ info, children, iterator }) => {
   );
 
   return (
-    <div onClick={goToPage} to={`${id}`}>
+    <ReactRouterLink onClick={stopPropagation} to={`${id}`}>
       <div className="ShortInfoCard__container scale-on-hover">
         <div className="ShortInfoCard" ref={animRef}>
           <AnimationStepper
@@ -104,7 +108,7 @@ const ShortInfoCard = ({ info, children, iterator }) => {
           {children}
         </div>
       </div>
-    </div>
+    </ReactRouterLink>
   );
 };
 
