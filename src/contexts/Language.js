@@ -23,7 +23,6 @@ const Language = ({ children }) => {
   const location = useLocation();
 
   const setLang = useCallback((text, lang) => {
-    console.log("setLang execution: ", lang);
     localStorage.setItem("lang", lang);
     // controlls visibility when text changes
     setSelectLanguage(lang);
@@ -46,10 +45,6 @@ const Language = ({ children }) => {
     });
     return () => clearTimeout(tmRef.current);
   }, []);
-
-  useEffect(() => {
-    console.log("controller: ", controller);
-  }, [controller]);
 
   const changeLanguage = useCallback(
     async (lang) => {
