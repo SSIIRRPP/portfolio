@@ -5,18 +5,16 @@ import EnFlag from "../../assets/icons/en.png";
 import { LanguageContext } from "../../contexts/Language";
 
 const LanguageSwitch = () => {
-  const { lang, changeLanguage } = useContext(LanguageContext);
+  const { selectLanguage, changeLanguage } = useContext(LanguageContext);
   return (
     <span className="Header__lang--container">
       <Select
         className="Header__lang--select"
-        classes={{ select: "TEST", standard: "TEST" }}
         variant="standard"
         MenuProps={{
           classes: { paper: "Header__lang--popover" },
         }}
-        SelectDisplayProps={{ className: "test1" }}
-        value={lang}
+        value={selectLanguage}
         onChange={(e) => changeLanguage(e.target.value)}
       >
         <MenuItem classes={{ selected: "Header__lang--selected" }} value="spa">

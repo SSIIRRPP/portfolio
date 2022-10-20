@@ -2,7 +2,9 @@ import { useContext } from "react";
 import { LanguageContext } from "../contexts/Language";
 
 const useLanguage = () => {
-  const { text } = useContext(LanguageContext);
+  const {
+    controller: { text },
+  } = useContext(LanguageContext);
 
   return text;
 };
