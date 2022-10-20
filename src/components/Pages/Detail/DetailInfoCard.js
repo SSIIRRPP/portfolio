@@ -35,8 +35,13 @@ const Github = ({ data }) => {
             basePath={`${baseLangPath}.Github`}
             path="visitRepo"
           >
-            {({ text }) => (
-              <MainButton as={ExternalLink} href={data.link} type="light">
+            {({ text, style }) => (
+              <MainButton
+                as={ExternalLink}
+                href={data.link}
+                type="light"
+                style={style}
+              >
                 {text}
                 <TecIcon
                   {...gitHubTec}
