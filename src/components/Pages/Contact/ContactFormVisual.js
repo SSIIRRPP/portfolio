@@ -1,7 +1,6 @@
 import { Container } from "@mui/system";
-import { useContext, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import AnimationStepper from "react-animation-stepper";
-import { LanguageContext } from "../../../contexts/Language";
 import useAnimation from "../../../hooks/useAnimation";
 import FormEmail from "./Form/FormEmail";
 import FormFooter from "./Form/FormFooter";
@@ -19,7 +18,6 @@ const ContactFormVisual = ({
   show,
 }) => {
   const ref = useRef();
-  const { lang } = useContext(LanguageContext);
   const { finished } = useAnimation({
     condition: show,
     element: ref,
@@ -55,7 +53,6 @@ const ContactFormVisual = ({
           error={errors.message}
           name="message"
           setChange={setChange}
-          lang={lang}
           baseLangPath={`${baseLangPath}.labels`}
           formStatus={formStatus}
         />
@@ -72,7 +69,7 @@ const ContactFormVisual = ({
         />
       ),
     }),
-    [state, errors, setChange, formStatus, handleSubmit, lang]
+    [state, errors, setChange, formStatus, handleSubmit]
   );
   const steps = useMemo(
     () => [

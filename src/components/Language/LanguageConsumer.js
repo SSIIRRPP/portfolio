@@ -1,33 +1,24 @@
 import { cloneElement, forwardRef } from "react";
-import {
-  useContext,
-  useMemo,
-  createElement,
-  useEffect,
-  useState,
-  useRef,
-} from "react";
+import { useContext, useMemo, createElement } from "react";
 import { LanguageContext } from "../../contexts/Language";
 import PropTypes from "prop-types";
 import { nanoid } from "nanoid";
 
-const defaultAnimationDuration = 400; // ms
-
 const LanguageConsumerComp = (props, ref) => {
-  const tmRef = useRef();
-  const [controller, setController] = useState({ visible: false, text: "" });
   const {
     path,
     basePath,
     element,
     text: propsText = undefined,
-    duration,
     children,
     noElement,
     justAnimation,
   } = props;
 
-  const { extractTextWithPath, lang } = useContext(LanguageContext);
+  const { controller, consumerStyle, extractTextWithPath } =
+    useContext(LanguageContext);
+
+  const lang = useMemo(() => controller.lang, [controller.lang]);
 
   const modifiedPropsText = useMemo(() => {
     if (justAnimation) {
@@ -60,57 +51,29 @@ const LanguageConsumerComp = (props, ref) => {
     return extractTextWithPath(`${basePath ? `${basePath}.` : ""}${path}`);
   }, [modifiedPropsText, extractTextWithPath, basePath, path]);
 
-  useEffect(() => {
-    // controlls visibility when text changes
-    setController((c) => {
-      if (c.visible) {
-        if (tmRef.current) {
-          clearTimeout(tmRef.current);
-        }
-        tmRef.current = setTimeout(() => {
-          setController({ visible: true, text });
-          tmRef.current = null;
-        }, duration);
-        return {
-          ...c,
-          visible: false,
-        };
-      } else {
-        return { visible: true, text };
-      }
-    });
-    return () => clearTimeout(tmRef.current);
-  }, [text, duration]);
-
   const newProps = useMemo(() => {
     // removes irrelevant props before passing them to children
     let p = { ...props };
-    delete p.basePath;
     delete p.path;
+    delete p.basePath;
     delete p.element;
-    delete p.noElement;
-    delete p.animation;
-    delete p.duration;
     delete p.text;
+    delete p.noElement;
     delete p.children;
+    delete p.animation;
     delete p.justAnimation;
     delete p.style;
     return p;
   }, [props]);
 
   const style = useMemo(() => {
-    // generates the new style with the animation,
-    // and returns the merged ones with props.style, if any
-    const s = {
-      transition: `opacity ${duration}ms ease-in-out`,
-      opacity: controller.visible ? "1" : "0",
-    };
-    return props.style ? { ...props.style, ...s } : s;
-  }, [props.style, controller.visible, duration]);
+    // generates new style merging consumerStyle with props.style if any
+    return props.style ? { ...props.style, ...consumerStyle } : consumerStyle;
+  }, [props.style, consumerStyle]);
 
   const childToShow = useMemo(() => {
     if (noElement) {
-      return controller.text;
+      return text;
     } else {
       let renderFunction = createElement;
       let possibleComponentProps = {};
@@ -122,8 +85,6 @@ const LanguageConsumerComp = (props, ref) => {
         possibleComponentProps = {
           // sends visibility status to children
           visible: controller.visible,
-          // sends duration to children
-          duration: props.duration,
         };
       }
       return renderFunction(
@@ -137,10 +98,10 @@ const LanguageConsumerComp = (props, ref) => {
           ref,
           style,
         },
-        controller.text
+        text
       );
     }
-  }, [controller, ref, element, noElement, newProps, style, props.duration]);
+  }, [controller.visible, text, ref, element, noElement, newProps, style]);
 
   return typeof children === "function"
     ? children({ controller, text: childToShow, style })
@@ -159,7 +120,6 @@ LanguageConsumer.propTypes = {
     PropTypes.objectOf(PropTypes.array),
     PropTypes.objectOf(PropTypes.node),
   ]),
-  duration: PropTypes.number,
   children: PropTypes.func,
   noElement: PropTypes.bool,
   justAnimation: PropTypes.bool,
@@ -167,7 +127,6 @@ LanguageConsumer.propTypes = {
 
 LanguageConsumer.defaultProps = {
   element: "p",
-  duration: defaultAnimationDuration,
   noElement: false,
   justAnimation: false,
 };
