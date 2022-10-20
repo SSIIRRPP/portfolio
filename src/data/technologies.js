@@ -16,6 +16,7 @@ import { ReactComponent as AWSS3Icon } from "../assets/icons/tecs/amazons3.svg";
 import { ReactComponent as AWSLambdaIcon } from "../assets/icons/tecs/awslambda.svg";
 import { ReactComponent as AWSCloudfrontIcon } from "../assets/icons/tecs/awscloudfront.svg";
 import { ReactComponent as ServerlessIcon } from "../assets/icons/tecs/serverless.svg";
+import { ReactComponent as SASSIcon } from "../assets/icons/tecs/sass.svg";
 
 const greyAWSBackground = "rgb(78 78 78)";
 
@@ -231,6 +232,18 @@ export const serverless = {
   },
 };
 
+export const sass = {
+  name: "SASS",
+  id: "sass",
+  level: 3.5,
+  icon: SASSIcon,
+  iconProps: {
+    width: 25,
+    height: 25,
+    fill: "#FD5750",
+  },
+};
+
 const technologies = [
   javascript,
   python,
@@ -250,6 +263,7 @@ const technologies = [
   awsCloudfront,
   awsDynamoDb,
   serverless,
+  sass,
 ].sort((a, b) => {
   if (a.name > b.name) {
     return 1;
