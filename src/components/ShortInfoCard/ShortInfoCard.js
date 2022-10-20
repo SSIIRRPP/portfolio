@@ -2,8 +2,6 @@ import { useCallback, useState, useMemo, useRef } from "react";
 import AnimationStepper from "react-animation-stepper";
 import { Link as ReactRouterLink } from "react-router-dom";
 import useAnimation from "../../hooks/useAnimation";
-import AnimationPlaceholder from "../util/AnimationPlaceholder";
-import Link from "../Visual/Link";
 import Short from "../Visual/Short";
 import "./styles/ShortInfoCard.scss";
 
@@ -28,7 +26,7 @@ const ShortInfoCard = ({ info, children, iterator }) => {
     animations: "fade-to-bottom",
     keepActive: true,
   });
-  const { title, id, link, short } = info;
+  const { title, id, short } = info;
 
   const setCompleted = useCallback(
     () => setStepsCompleted(true),
@@ -49,31 +47,19 @@ const ShortInfoCard = ({ info, children, iterator }) => {
           animationSeparation={animationSeparation}
         />
       ),
-      link: link ? (
-        <Link className="ShortInfoCard__link" link={link} useExternalLink />
-      ) : (
-        <AnimationPlaceholder className="ShortInfoCard__link" />
-      ),
     }),
-    [title, short, link, stepsCompleted]
+    [title, short, stepsCompleted]
   );
 
   const steps = useMemo(
     () => [
       {
         config: {
-          title: {
-            classes: "fade-to-right",
-            keepConfig: true,
-          },
-          link: {
-            classes: "fade-to-left",
-            keepConfig: true,
-            delay: animationSeparation,
-          },
+          classes: "fade-to-right",
+          keepConfig: true,
         },
         duration: 200,
-        elements: ["title", "link"],
+        elements: ["title"],
       },
       {
         config: {
