@@ -22,11 +22,13 @@ const Github = ({ data }) => {
       </td>
       <td>
         {!!data.private ? (
-          <LanguageConsumer
-            element="span"
-            basePath={`${baseLangPath}.Github`}
-            path="private"
-          />
+          <div>
+            <LanguageConsumer
+              element="span"
+              basePath={`${baseLangPath}.Github`}
+              path="private"
+            />
+          </div>
         ) : (
           <LanguageConsumer
             noElement
