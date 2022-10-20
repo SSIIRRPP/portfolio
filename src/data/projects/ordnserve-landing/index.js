@@ -6,6 +6,7 @@ import {
   nodejs,
   awsS3,
   awsCloudfront,
+  sass,
 } from "../../technologies";
 
 const ordNServeLanding = {
@@ -106,7 +107,7 @@ const ordNServeLanding = {
     link: "https://github.com/SSIIRRPP/ordnserve-landing",
   },
   stack: {
-    front: [react, nextjs],
+    front: [react, nextjs, sass],
     back: [nodejs, awsS3, awsCloudfront],
   },
   time: {

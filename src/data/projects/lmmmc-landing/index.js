@@ -9,6 +9,7 @@ import {
   awsEC2,
   awsS3,
   awsCloudfront,
+  sass,
 } from "../../technologies";
 
 const LMMMCLanding = {
@@ -114,7 +115,7 @@ const LMMMCLanding = {
     link: "https://github.com/SSIIRRPP/LMMMC-landing",
   },
   stack: {
-    front: [react],
+    front: [react, sass],
     back: [
       nodejs,
       mongodb,

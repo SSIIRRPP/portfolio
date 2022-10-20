@@ -13,6 +13,7 @@ import {
   awsLambda,
   awsEC2,
   awsCloudfront,
+  sass,
 } from "../../technologies";
 
 const ordNServeStore = {
@@ -188,7 +189,7 @@ const ordNServeStore = {
     link: null,
   },
   stack: {
-    front: [react, redux],
+    front: [react, redux, sass],
     back: [
       nodejs,
       expressjs,

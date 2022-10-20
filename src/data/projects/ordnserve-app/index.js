@@ -11,6 +11,7 @@ import {
   awsEC2,
   awsLambda,
   awsCloudfront,
+  sass,
 } from "../../technologies";
 // eslint-disable-next-line import/no-webpack-loader-syntax
 /* import pruebaJs from "!!raw-loader!./files/test.js"; */
@@ -164,7 +165,7 @@ const ordNServeApp = {
     link: null,
   },
   stack: {
-    front: [react, xstate],
+    front: [react, xstate, sass],
     back: [
       nodejs,
       mongodb,
