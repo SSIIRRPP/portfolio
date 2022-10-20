@@ -2,7 +2,6 @@ import { useContext, useMemo } from "react";
 import { LanguageContext } from "../../../contexts/Language";
 import profileImage from "../../../assets/images/profile2.jpg";
 import "./styles/MainProfileImage.scss";
-import LanguageConsumer from "../../Language/LanguageConsumer";
 
 const MainProfileImage = ({ info, animationRef }) => {
   const { extractTextWithPath } = useContext(LanguageContext);
