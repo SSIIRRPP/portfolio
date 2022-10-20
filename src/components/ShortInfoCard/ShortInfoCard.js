@@ -96,7 +96,11 @@ const ShortInfoCard = ({ info, children, iterator }) => {
   );
 
   return (
-    <ReactRouterLink onClick={stopPropagation} to={`${id}`}>
+    <ReactRouterLink
+      className="ShortInfoCard__anchor"
+      onClick={stopPropagation}
+      to={`${id}`}
+    >
       <div className="ShortInfoCard__container scale-on-hover">
         <div className="ShortInfoCard" ref={animRef}>
           <AnimationStepper

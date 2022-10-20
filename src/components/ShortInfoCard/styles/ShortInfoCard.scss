@@ -3,6 +3,9 @@
 @import "../../../styles/animations.scss";
 
 .ShortInfoCard {
+  &__anchor {
+    text-decoration: none !important;
+  }
   &__container {
     @include make-card($main-background);
     min-height: 300px;
