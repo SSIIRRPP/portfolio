@@ -27,14 +27,12 @@
     opacity: 0;
     grid-area: info;
     min-height: 180px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr;
     & > table {
+      @include make-card($color-2);
+      margin-top: 0.5rem;
       width: 100%;
       & td {
         &:first-child {
@@ -69,12 +67,6 @@
       padding: 0 !important;
     }
     &--item {
-      /* display: flex;
-      justify-content: space-between;
-      align-items: center; */
-      /* display: grid;
-      grid-template-columns: auto 10%;
-      grid-template-rows: 1fr; */
       & h4 {
         &:after {
           content: ":";
@@ -90,6 +82,8 @@
           padding: 0 !important;
           margin-bottom: 0.2rem;
         }
+        max-width: 190px;
+        margin-left: auto;
         padding: 0 !important;
         border-radius: 0.2rem;
       }
