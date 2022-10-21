@@ -1,17 +1,11 @@
 import { createElement, useMemo, forwardRef } from "react";
 import PropTypes from "prop-types";
 import "./styles/MainButton.scss";
+import useClearProps from "../../hooks/useClearProps";
 
 const MainButtonComp = (props, ref) => {
   const { as, type, className, children, center } = props;
-  const newProps = useMemo(() => {
-    let p = { ...props };
-    delete p.children;
-    delete p.as;
-    delete p.type;
-    delete p.center;
-    return p;
-  }, [props]);
+  const newProps = useClearProps(props, ["children", "as", "type", "center"]);
   return createElement(
     as,
     {

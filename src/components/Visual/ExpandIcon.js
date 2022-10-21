@@ -1,15 +1,11 @@
 import { forwardRef } from "react";
 import { useMemo } from "react";
 import { ReactComponent as ExpandSVG } from "../../assets/icons/expand.svg";
+import useClearProps from "../../hooks/useClearProps";
 import "./styles/ExpandIcon.scss";
 
 const ExpandIconComp = (props, ref) => {
-  const newProps = useMemo(() => {
-    const p = { ...props };
-    delete p.open;
-    delete p.className;
-    return p;
-  }, [props]);
+  const newProps = useClearProps(props, ["open", "className"]);
 
   return (
     <ExpandSVG

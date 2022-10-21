@@ -3,6 +3,7 @@ import { useContext, useMemo, createElement } from "react";
 import { LanguageContext } from "../../contexts/Language";
 import PropTypes from "prop-types";
 import { nanoid } from "nanoid";
+import useClearProps from "../../hooks/useClearProps";
 
 const LanguageConsumerComp = (props, ref) => {
   const {
@@ -18,6 +19,18 @@ const LanguageConsumerComp = (props, ref) => {
   const { controller, consumerStyle, extractTextWithPath } =
     useContext(LanguageContext);
 
+  // remove irrelevant props before passing them to children
+  const newProps = useClearProps(props, [
+    "path",
+    "basePath",
+    "element",
+    "text",
+    "noElement",
+    "children",
+    "animation",
+    "justAnimation",
+    "style",
+  ]);
   const lang = useMemo(() => controller.lang, [controller.lang]);
 
   const modifiedPropsText = useMemo(() => {
@@ -50,21 +63,6 @@ const LanguageConsumerComp = (props, ref) => {
     }
     return extractTextWithPath(`${basePath ? `${basePath}.` : ""}${path}`);
   }, [modifiedPropsText, extractTextWithPath, basePath, path]);
-
-  const newProps = useMemo(() => {
-    // removes irrelevant props before passing them to children
-    let p = { ...props };
-    delete p.path;
-    delete p.basePath;
-    delete p.element;
-    delete p.text;
-    delete p.noElement;
-    delete p.children;
-    delete p.animation;
-    delete p.justAnimation;
-    delete p.style;
-    return p;
-  }, [props]);
 
   const style = useMemo(() => {
     // generates new style merging consumerStyle with props.style if any
