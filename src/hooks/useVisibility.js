@@ -2,12 +2,12 @@ import { useRef } from "react";
 import { useState, useEffect, useCallback } from "react";
 const { throttle } = require("lodash");
 const useVisibility = ({
-  active = true,
-  retrieveEntry = false,
+  active = true, // prop to control when IntersectionObserver should be activated
+  retrieveEntry = false, // whether IntersectionObserver event's entry should be returned
   fatherRef,
   childRef,
-  options: opts = {},
-  stopOnDetection = false,
+  options: opts = {}, // IntersectionObserver's options object
+  stopOnDetection = false, // disables IntersectionObserver at first visibility
 } = {}) => {
   const _childRef = useRef(null);
   const observerRef = useRef(null);
@@ -19,11 +19,11 @@ const useVisibility = ({
 
   const handleVisibility = useCallback(
     (entries) => {
+      if (retrieveEntry) {
+        setEntry(entries[0]);
+      }
       if (entries[0].intersectionRatio > (opts.ratio ? opts.ratio : 0.05)) {
         if (!isVisible) {
-          if (retrieveEntry) {
-            setEntry(entries[0]);
-          }
           setIsVisible(true);
         }
       } else {
@@ -37,6 +37,8 @@ const useVisibility = ({
   );
 
   const handleScroll = useCallback(() => {
+    // checks if element is in the top half of its container,
+    // or if its in the bottom half
     if (child && parent && isVisible) {
       const a = child.getBoundingClientRect();
       const { top } = a;
@@ -47,12 +49,12 @@ const useVisibility = ({
       } else {
         setIsInTopHalf(true);
       }
-    } else if (isVisible) {
-      /* console.log("No childRef"); */
     }
   }, [child, parent, isVisible]);
 
   useEffect(() => {
+    // sets which child's ref is going to be used,
+    // the internal one or the one provided through params
     if (childRef?.current) {
       setChild(childRef.current);
     } else if (_childRef?.current) {
@@ -63,6 +65,8 @@ const useVisibility = ({
   }, [childRef]);
 
   useEffect(() => {
+    // sets which father's ref is going to be used,
+    // the internal one or browser's viewport
     if (fatherRef?.current) {
       setParent(fatherRef.current);
     } else {
@@ -71,18 +75,21 @@ const useVisibility = ({
   }, [fatherRef]);
 
   useEffect(() => {
+    // makes the first top or bottom visibility check,
+    // and sets the event listener on scroll event
     handleScroll();
     if (parent && active) {
-      const e = parent;
       const f = throttle(handleScroll, 300);
-      e?.addEventListener("scroll", f);
-      return () => e?.removeEventListener("scroll", f);
+      parent?.addEventListener("scroll", f);
+      return () => parent?.removeEventListener("scroll", f);
     }
   }, [parent, active, handleScroll]);
 
   useEffect(() => {
+    // sets the IntersectionObserver to check child's visibility
     if (active && child) {
       const options = {
+        // uses father's ref if its provided, or browsers viewport if not provided
         root: parent ? parent : null,
         rootMargin: opts.rootMargin ? opts.rootMargin : "0px 0px 0px",
         threshold: opts.threshold ? opts.threshold : [0.95, 0.05],
@@ -98,6 +105,8 @@ const useVisibility = ({
   }, [parent, child, opts, active, handleVisibility]);
 
   useEffect(() => {
+    // disables IntersectionObserver at first visibility
+    // detection if "stopOnDetection" prop is true
     if (isVisible && stopOnDetection) {
       observerRef.current?.disconnect();
       observerRef.current = null;
@@ -108,6 +117,7 @@ const useVisibility = ({
     isVisible,
     entry,
     isInTopHalf,
+    // returns internal child ref to set in the component to observe if none is provided in params
     ref: childRef?.current ? undefined : _childRef,
   };
 };
