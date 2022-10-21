@@ -1,17 +1,16 @@
 import { forwardRef, useMemo } from "react";
 import PropTypes from "prop-types";
+import useClearProps from "../../hooks/useClearProps";
 
 const ExternalLinkComp = (props, ref) => {
   const { href, children } = props;
-  const newProps = useMemo(() => {
-    let p = { ...props };
-    delete p.href;
-    delete p.children;
-    delete p.makeMainButton;
-    delete p.className;
-    delete p.buttonType;
-    return p;
-  }, [props]);
+  const newProps = useClearProps(props, [
+    "href",
+    "children",
+    "makeMainButton",
+    "className",
+    "buttonType",
+  ]);
   const className = useMemo(() => {
     let clNm = "";
     const concat = (str) => {

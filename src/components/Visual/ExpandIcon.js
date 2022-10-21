@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import { useMemo } from "react";
 import { ReactComponent as ExpandSVG } from "../../assets/icons/expand.svg";
 import useClearProps from "../../hooks/useClearProps";
 import "./styles/ExpandIcon.scss";

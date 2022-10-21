@@ -1,4 +1,4 @@
-import { createElement, useMemo, forwardRef } from "react";
+import { createElement, forwardRef } from "react";
 import PropTypes from "prop-types";
 import "./styles/MainButton.scss";
 import useClearProps from "../../hooks/useClearProps";

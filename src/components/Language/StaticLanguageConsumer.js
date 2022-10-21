@@ -1,11 +1,5 @@
-import {
-  cloneElement,
-  createElement,
-  useContext,
-  useEffect,
-  useMemo,
-} from "react";
-import { forwardRef, useRef } from "react";
+import { cloneElement, createElement, useContext, useMemo } from "react";
+import { forwardRef } from "react";
 import { LanguageContext } from "../../contexts/Language";
 import useClearProps from "../../hooks/useClearProps";
 
