@@ -9,15 +9,24 @@ import ExpandIcon from "../../Visual/ExpandIcon";
 import "./styles/DetailExpandItem.scss";
 
 const DetailExpandItemComp = (props, ref) => {
-  const { children, baseLangPath } = props;
+  const { children, baseLangPath, languageTextProp } = props;
   const [open, setOpen] = useState(false);
-  const newProps = useClearProps(props, ["children", "baseLangPath"]);
+  const newProps = useClearProps(props, [
+    "children",
+    "baseLangPath",
+    "languageTextProp",
+  ]);
 
   return (
     <Container ref={ref} {...newProps}>
       <div className="DetailExpandItem__container">
         <div className="DetailExpandItem">
-          <LanguageConsumer noElement basePath={baseLangPath} path="openButton">
+          <LanguageConsumer
+            noElement
+            basePath={baseLangPath}
+            path="openButton"
+            text={languageTextProp}
+          >
             {({ text, style }) => (
               <MainButton
                 as="h4"
@@ -25,12 +34,12 @@ const DetailExpandItemComp = (props, ref) => {
                 onClick={() => setOpen((s) => !s)}
               >
                 {text}
-                <div className="DetailExpandItem__icon">
-                  <ExpandIcon open={open} className="light" />
-                </div>
               </MainButton>
             )}
           </LanguageConsumer>
+          <div className="DetailExpandItem__icon">
+            <ExpandIcon open={open} className="light" />
+          </div>
         </div>
         <Collapse in={open}>{children}</Collapse>
       </div>

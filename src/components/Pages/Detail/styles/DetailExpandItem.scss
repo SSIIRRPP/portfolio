@@ -1,0 +1,26 @@
+@import "../../../../styles/theme.scss";
+@import "../../../../styles/mixins.scss";
+
+.DetailExpandItem {
+  &__container {
+    @include make-card($color-1);
+    margin-top: 1rem;
+  }
+  position: relative;
+  & > h4 {
+    @include make-card-thin($color-3);
+    margin: 0.5rem 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: $color-5;
+  }
+  &__icon {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+}
