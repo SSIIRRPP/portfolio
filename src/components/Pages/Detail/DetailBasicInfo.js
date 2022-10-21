@@ -10,12 +10,16 @@ const Placeholder = ({ animationRef, className = "" }) => (
   <div ref={animationRef} className={className} />
 );
 
-const DetailBasicInfo = ({ data, animationRef, animationEnded }) => {
+const DetailBasicInfo = ({ data, animationRef, type, animationEnded }) => {
   const [animationCompleted, setAnimationCompleted] = useState(false);
   const components = useMemo(
     () => ({
       info: (
-        <DetailInfoCard animationCompleted={animationCompleted} data={data} />
+        <DetailInfoCard
+          animationCompleted={animationCompleted}
+          data={data}
+          type={type}
+        />
       ),
       short: <Short className="DetailBasicInfo__short" short={data.short} />,
       stack: data.stack ? (

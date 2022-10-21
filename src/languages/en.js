@@ -84,6 +84,9 @@ const en = {
         hours: "Hours",
         description: "Description",
       },
+      DetailCodeSampleFile: {
+        openButton: "View complete file",
+      },
     },
     Contact: {
       title: "Contact",
@@ -127,6 +130,12 @@ const en = {
       TechStack: {
         title: "Technology stack",
         level: "Level",
+      },
+      ImageCard: {
+        Modal: {
+          closeButton: "Close",
+          feedback: "Zoomable",
+        },
       },
     },
     ContactCard: {

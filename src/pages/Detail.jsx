@@ -38,9 +38,15 @@ const Detail = ({ data, type }) => {
   const components = useMemo(
     () => ({
       title: <Title title={data.title} />,
-      info: <DetailBasicInfo data={data} animationEnded={animationEnded} />,
+      info: (
+        <DetailBasicInfo
+          data={data}
+          type={type}
+          animationEnded={animationEnded}
+        />
+      ),
       body:
-        data.detail || data.courses ? (
+        data.detail || data.courses || data.text_file ? (
           <DetailBody data={data} animationEnded={animationEnded} type={type} />
         ) : (
           <AnimationPlaceholder /> // keep animation working

@@ -4,6 +4,7 @@ import useQueryParams from "../../../hooks/useQueryParams";
 import LanguageConsumer from "../../Language/LanguageConsumer";
 import ParagraphGenerator from "../../ParagraphGenerator";
 import ExpandIcon from "../../Visual/ExpandIcon";
+import DetailCodeSampleFile from "./DetailCodeSampleFile";
 import DetailCourseBadge from "./DetailCourseBadge";
 import "./styles/DetailBody.scss";
 
@@ -51,6 +52,7 @@ const DetailBody = ({ data, type, animationEnded, animationRef }) => {
         </LanguageConsumer>
       </div>
       <Collapse in={open} timeout={800}>
+        {data.text_file ? <DetailCodeSampleFile data={data} /> : null}
         {data.details ? (
           <LanguageConsumer
             className="DetailBody__expand"

@@ -84,6 +84,9 @@ const spa = {
         hours: "Horas",
         description: "Descripción",
       },
+      DetailCodeSampleFile: {
+        openButton: "Ver archivo completo",
+      },
     },
     Contact: {
       title: "Contacto",
@@ -127,6 +130,12 @@ const spa = {
       TechStack: {
         title: "Stack tecnológico",
         level: "Nivel",
+      },
+      ImageCard: {
+        Modal: {
+          closeButton: "Cerrar",
+          feedback: "Zoomeable",
+        },
       },
     },
     ContactCard: {

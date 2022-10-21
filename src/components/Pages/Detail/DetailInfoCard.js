@@ -72,10 +72,15 @@ const ListItem = ({ name, value }) => {
   );
 };
 
-const DetailInfoCard = ({ data, animationCompleted, animationRef }) => {
+const DetailInfoCard = ({
+  data,
+  animationCompleted,
+  type: data_type,
+  animationRef,
+}) => {
   const {
     github,
-    time: { from, to },
+    time: { from, to } = {},
     type,
     mobileFirst,
     totalHours,
@@ -96,10 +101,15 @@ const DetailInfoCard = ({ data, animationCompleted, animationRef }) => {
           visible={animationCompleted}
         >
           {github ? <Github data={github} /> : null}
-          {from ? (
-            <ListItem name="timeFrom" value={<DateShow date={from} />} />
+          {data_type !== "code" ? (
+            <>
+              {console.log(data_type)}
+              {from ? (
+                <ListItem name="timeFrom" value={<DateShow date={from} />} />
+              ) : null}
+              <ListItem name="timeTo" value={<DateShow date={to} />} />
+            </>
           ) : null}
-          <ListItem name="timeTo" value={<DateShow date={to} />} />
           {type ? <ListItem name="type" value={type} /> : null}
           {typeof mobileFirst === "boolean" ? (
             <ListItem

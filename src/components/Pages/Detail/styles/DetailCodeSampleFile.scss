@@ -1,0 +1,26 @@
+@import "../../../../styles/theme.scss";
+@import "../../../../styles/mixins.scss";
+
+.DetailCodeSampleFile {
+  @include make-card($color-1);
+  margin-top: 1rem;
+  &__header {
+    & > h4 {
+      @include make-card-thin($color-3);
+      position: relative;
+      margin: 0.5rem 0;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-right: 35px;
+      cursor: pointer;
+      text-align: center;
+      color: $color-5;
+    }
+    &--openIcon {
+      position: absolute;
+      top: 55%;
+      right: 5px;
+      transform: translateY(-50%);
+    }
+  }
+}
