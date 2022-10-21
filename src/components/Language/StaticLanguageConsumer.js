@@ -7,6 +7,7 @@ import {
 } from "react";
 import { forwardRef, useRef } from "react";
 import { LanguageContext } from "../../contexts/Language";
+import useClearProps from "../../hooks/useClearProps";
 
 const StaticLanguageConsumer = forwardRef((props, ref) => {
   const {
@@ -39,21 +40,18 @@ const StaticLanguageConsumer = forwardRef((props, ref) => {
     }
   }, []);
 
-  const newProps = useMemo(() => {
-    // removes irrelevant props before passing them to children
-    let p = { ...props };
-    delete p.basePath;
-    delete p.path;
-    delete p.element;
-    delete p.noElement;
-    delete p.animation;
-    delete p.duration;
-    delete p.text;
-    delete p.children;
-    delete p.justAnimation;
-    delete p.style;
-    return p;
-  }, []);
+  // removes irrelevant props before passing them to children
+  const newProps = useClearProps(props, [
+    "path",
+    "basePath",
+    "element",
+    "text",
+    "noElement",
+    "children",
+    "animation",
+    "justAnimation",
+    "style",
+  ]);
 
   const childToShow = useMemo(() => {
     if (noElement) {
