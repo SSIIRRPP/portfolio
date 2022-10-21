@@ -40,6 +40,7 @@
     &--header {
       display: flex;
       justify-content: flex-end;
+      padding: 0 0.75rem;
       & svg {
         width: 30px;
         fill: $color-5;
