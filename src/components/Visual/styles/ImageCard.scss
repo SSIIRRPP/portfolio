@@ -1,0 +1,76 @@
+@import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
+
+.ImageCard {
+  &.with-modal {
+    & > img {
+      cursor: pointer;
+    }
+  }
+  & > img {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0.4rem;
+  }
+  & > p {
+    @include make-card($color-2);
+    font-size: 0.8rem;
+    margin: 5px auto 0;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  @include make-card($color-1);
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr auto;
+  &__modal {
+    &--root {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @include make-card($color-1);
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    width: 90vw;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    &--header {
+      display: flex;
+      justify-content: flex-end;
+      & svg {
+        width: 30px;
+        fill: $color-5;
+      }
+    }
+    &--body {
+      @include make-card-thin($color-2);
+      margin: 0.5rem 0;
+      border-radius: 0;
+      position: relative;
+    }
+    &--zoom {
+      &Wrapper {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      &Feedback {
+        @include make-card-thin($text-background-color);
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        z-index: 2000;
+        color: $color-5;
+        font-size: 0.8rem;
+      }
+    }
+    &--footer {
+      padding: 0 0.75rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
