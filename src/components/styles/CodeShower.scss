@@ -1,12 +1,13 @@
 @import "../../styles/theme.scss";
 @import "../../styles/mixins.scss";
+@import "./atom-one-dark.css";
 
 code-shower {
   @include make-card($color-1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   padding: 1rem;
   & > h1,
   h2,
