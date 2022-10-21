@@ -60,6 +60,7 @@
         @include make-card-thin($text-background-color);
         position: absolute;
         left: 50%;
+        top: 0.4rem;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
         z-index: 2000;
