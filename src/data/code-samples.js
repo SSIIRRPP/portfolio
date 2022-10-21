@@ -1,5 +1,5 @@
-const codeSamples = [
-  /* { id: "1", title: "asdf" }, { id: "2" } */
-];
+import code_useVisibility from "./code/code_useVisibility";
+
+const codeSamples = [code_useVisibility];
 
 export default codeSamples;
