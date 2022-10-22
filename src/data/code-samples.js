@@ -1,5 +1,5 @@
-import code_useVisibility from "./code/code_useVisibility";
+import code_TablesWatcher from "./code/code_TablesWatcher";
 
-const codeSamples = [code_useVisibility];
+const codeSamples = [code_TablesWatcher];
 
 export default codeSamples;

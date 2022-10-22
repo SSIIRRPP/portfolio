@@ -1,0 +1,63 @@
+@import "../../../styles/theme.scss";
+@import "../../../styles/mixins.scss";
+
+.code_TablesWatcher {
+  &__server-atencion {
+    & small {
+      color: $color-4;
+    }
+    &--textFirst {
+      @include make-card($color-2);
+      grid-area: text1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    &--textSecond {
+      @include make-card($color-2);
+      grid-area: text2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    &--images {
+      grid-area: images;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "images text1" "images text2";
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .code_TablesWatcher {
+    &__server-atencion {
+      &--textFirst {
+        margin-top: auto;
+        margin-bottom: 0.25rem;
+      }
+      &--textSecond {
+        margin-top: 0.25rem;
+        margin-bottom: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .code_TablesWatcher {
+    &__server-atencion {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: "text1" "images" "text2";
+      /* &--images {
+        padding-left: 0;
+        padding-right: 0;
+      } */
+    }
+  }
+}
