@@ -87,6 +87,17 @@ const en = {
       DetailCodeSampleFile: {
         openButton: "View complete file",
       },
+      ProblemSolutionImageCard: {
+        header: {
+          title: "Solution to the problem",
+        },
+        footer: {
+          button: {
+            problem: "Show problem",
+            solution: "Show solution",
+          },
+        },
+      },
     },
     Contact: {
       title: "Contact",

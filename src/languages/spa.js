@@ -87,6 +87,17 @@ const spa = {
       DetailCodeSampleFile: {
         openButton: "Ver archivo completo",
       },
+      ProblemSolutionImageCard: {
+        header: {
+          title: "Solución al problema",
+        },
+        footer: {
+          button: {
+            problem: "Ver problema",
+            solution: "Ver solución",
+          },
+        },
+      },
     },
     Contact: {
       title: "Contacto",
