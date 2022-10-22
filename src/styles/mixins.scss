@@ -35,7 +35,7 @@
 
 @mixin card-bone($color) {
   background-color: $color;
-  border-radius: 0.4rem;
+  border-radius: $main-border-radius;
   box-shadow: $main-box-shadow;
 }
 
