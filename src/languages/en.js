@@ -85,7 +85,10 @@ const en = {
         description: "Description",
       },
       DetailCodeSampleFile: {
-        openButton: "View complete file",
+        multi: {
+          openButton: "View code files",
+        },
+        openButton: "View complete code file",
       },
       ProblemSolutionImageCard: {
         header: {

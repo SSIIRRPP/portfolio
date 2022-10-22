@@ -85,7 +85,10 @@ const spa = {
         description: "Descripción",
       },
       DetailCodeSampleFile: {
-        openButton: "Ver archivo completo",
+        multi: {
+          openButton: "Ver archivos de código",
+        },
+        openButton: "Ver archivo de código",
       },
       ProblemSolutionImageCard: {
         header: {
