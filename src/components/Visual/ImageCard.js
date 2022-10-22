@@ -42,7 +42,10 @@ const ImageCard = ({
         style={container}
       >
         {imageComponent}
-        <p style={p}>{text}</p>
+        {typeof text === "string" ? <p style={p}>{text}</p> : null}
+        {typeof text === "object" ? (
+          <LanguageConsumer element="p" text={text} style={p} />
+        ) : null}
       </div>
       {withModal ? (
         <Modal
