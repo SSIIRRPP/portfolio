@@ -5,6 +5,7 @@ import { github as gitHubTec } from "../../../data/technologies";
 import DateShow from "../../Visual/DateShow";
 import MainButton from "../../Buttons/MainButton";
 import ExternalLink from "../../Visual/ExternalLink";
+import { useMemo } from "react";
 
 const baseLangPath = "Pages.Detail.DetailInfoCard";
 
@@ -85,6 +86,58 @@ const DetailInfoCard = ({
     mobileFirst,
     totalHours,
   } = data;
+
+  const children = useMemo(
+    () =>
+      [
+        github ? <Github key="github" data={github} /> : null,
+        data_type !== "code" && from ? (
+          <ListItem
+            key="timeFrom"
+            name="timeFrom"
+            value={<DateShow date={from} />}
+          />
+        ) : null,
+        data_type !== "code" ? (
+          <ListItem key="timeTo" name="timeTo" value={<DateShow date={to} />} />
+        ) : null,
+        type ? <ListItem key="type" name="type" value={type} /> : null,
+        typeof mobileFirst === "boolean" ? (
+          <ListItem
+            key="mobileFirst"
+            name="mobileFirst"
+            value={
+              <LanguageConsumer
+                element="span"
+                basePath={baseLangPath}
+                path={mobileFirst ? "mobile" : "desktop"}
+              />
+            }
+          />
+        ) : null,
+        totalHours ? (
+          <ListItem
+            key="totalTime"
+            name="totalTime"
+            value={
+              <LanguageConsumer
+                element="span"
+                basePath={baseLangPath}
+                path="hours"
+              >
+                {({ text }) => (
+                  <span>
+                    ~{totalHours} {text}
+                  </span>
+                )}
+              </LanguageConsumer>
+            }
+          />
+        ) : null,
+      ].filter((item) => Boolean(item)),
+    [data_type, from, to, github, mobileFirst, totalHours, type]
+  );
+
   return (
     <div className="DetailBasicInfo__info" ref={animationRef}>
       <LanguageConsumer
@@ -100,47 +153,7 @@ const DetailInfoCard = ({
           childClassName="DetailBasicInfo__info--item"
           visible={animationCompleted}
         >
-          {github ? <Github data={github} /> : null}
-          {data_type !== "code" ? (
-            <>
-              {console.log(data_type)}
-              {from ? (
-                <ListItem name="timeFrom" value={<DateShow date={from} />} />
-              ) : null}
-              <ListItem name="timeTo" value={<DateShow date={to} />} />
-            </>
-          ) : null}
-          {type ? <ListItem name="type" value={type} /> : null}
-          {typeof mobileFirst === "boolean" ? (
-            <ListItem
-              name="mobileFirst"
-              value={
-                <LanguageConsumer
-                  element="span"
-                  basePath={baseLangPath}
-                  path={mobileFirst ? "mobile" : "desktop"}
-                />
-              }
-            />
-          ) : null}
-          {totalHours ? (
-            <ListItem
-              name="totalTime"
-              value={
-                <LanguageConsumer
-                  element="span"
-                  basePath={baseLangPath}
-                  path="hours"
-                >
-                  {({ text }) => (
-                    <span>
-                      ~{totalHours} {text}
-                    </span>
-                  )}
-                </LanguageConsumer>
-              }
-            />
-          ) : null}
+          {children}
         </FadeIn>
       </table>
     </div>
