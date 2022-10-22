@@ -1,0 +1,72 @@
+@import "../../../../styles/theme.scss";
+@import "../../../../styles/mixins.scss";
+
+$card-color: $color-2;
+$animation-duration: 1000ms; // ms
+
+.ProblemSolutionImageCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  box-shadow: $main-box-shadow;
+  border-radius: $main-border-radius;
+  &__header {
+    @include make-card($card-color);
+    box-shadow: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    &--title {
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+  }
+  &__body {
+    &--container {
+      @include make-card($card-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: none;
+      border-radius: 0;
+      border: 1px solid $color-3;
+      border-left: 0;
+      border-right: 0;
+    }
+    width: fit-content;
+    position: relative;
+    &--item {
+      &.show {
+        transition-delay: calc(($animation-duration / 2) - 10ms);
+      }
+      transition-property: transform;
+      transition-duration: calc($animation-duration / 2);
+      transition-timing-function: linear;
+    }
+  }
+  &__problem {
+    &.hide {
+      transform: rotateY(90deg);
+    }
+    &.show {
+      transform: rotateY(0deg);
+    }
+  }
+  &__solution {
+    &.hide {
+      transform: rotateY(-90deg) perspective(100px);
+    }
+    &.show {
+      transform: rotateY(0deg) perspective(100px);
+    }
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__footer {
+    @include make-card($card-color);
+    box-shadow: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    display: grid;
+  }
+}
