@@ -4,7 +4,11 @@ import "./styles/CodeShower.scss";
 
 const CodeShower = ({ children, className, id, title, text, file }) => {
   return (
-    <code-shower class={`CodeShower ${className}`} id={id} is="custom">
+    <code-shower
+      class={`CodeShower${className ? ` ${className}` : ""}`}
+      id={id}
+      is="custom"
+    >
       {title ? title : null}
       {text ? text : null}
       <Highlight language="javascript">{file ? file : children}</Highlight>
