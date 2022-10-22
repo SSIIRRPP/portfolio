@@ -7,12 +7,12 @@ import "./styles/ProblemSolutionImageCard.scss";
 const baseLangPath = "Pages.Detail.ProblemSolutionImageCard";
 
 const imagesStyle = {
-  minWidth: "300px",
+  minWidth: "250px",
   minHeight: "300px",
 };
 
 const imageContainerStyle = {
-  minWidth: "300px",
+  minWidth: "250px",
   minHeight: "300px",
   display: "inline-block",
 };
@@ -30,12 +30,28 @@ const ProblemSolutionImageCard = ({
   const [showSolution, setShowSolution] = useState(false);
 
   const makeCard = useCallback((item) => {
-    const itemStyle = item.style || {};
+    const itemStyles = item.styles || { image: {} };
     const imageProps = item.imageProps || {};
+
+    const styles = {
+      image: {
+        ...imageCardStyles.image,
+        ...itemStyles?.image,
+      },
+      container: {
+        ...imageCardStyles.container,
+        ...itemStyles?.container,
+      },
+      p: {
+        ...imageCardStyles.p,
+        ...itemStyles?.p,
+      },
+    };
+
     return (
       <ImageCard
         {...imageProps}
-        styles={{ ...itemStyle, ...imageCardStyles }}
+        styles={styles}
         className={item.className ? item.className : undefined}
         src={item.src}
         alt={item.alt}
