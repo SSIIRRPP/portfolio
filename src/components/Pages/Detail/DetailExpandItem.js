@@ -1,5 +1,4 @@
 import { Collapse } from "@mui/material";
-import { Container } from "@mui/system";
 import { forwardRef } from "react";
 import { useState } from "react";
 import useClearProps from "../../../hooks/useClearProps";
@@ -9,7 +8,7 @@ import ExpandIcon from "../../Visual/ExpandIcon";
 import "./styles/DetailExpandItem.scss";
 
 const DetailExpandItemComp = (props, ref) => {
-  const { children, baseLangPath, languageTextProp } = props;
+  const { children, baseLangPath, className, languageTextProp } = props;
   const [open, setOpen] = useState(false);
   const newProps = useClearProps(props, [
     "children",
@@ -18,7 +17,7 @@ const DetailExpandItemComp = (props, ref) => {
   ]);
 
   return (
-    <Container ref={ref} {...newProps}>
+    <div className={className ? className : undefined} ref={ref} {...newProps}>
       <div className="DetailExpandItem__container">
         <div className="DetailExpandItem">
           <LanguageConsumer
@@ -43,7 +42,7 @@ const DetailExpandItemComp = (props, ref) => {
         </div>
         <Collapse in={open}>{children}</Collapse>
       </div>
-    </Container>
+    </div>
   );
 };
 

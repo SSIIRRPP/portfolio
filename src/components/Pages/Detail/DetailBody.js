@@ -51,7 +51,11 @@ const DetailBody = ({ data, type, animationEnded, animationRef }) => {
           )}
         </LanguageConsumer>
       </div>
-      <Collapse in={open} timeout={800}>
+      <Collapse
+        in={open}
+        classes={{ wrapperInner: "DetailBody__expand--wrapper" }}
+        timeout={800}
+      >
         {data.text_file ? <DetailCodeSampleFile data={data} /> : null}
         {data.details ? (
           <LanguageConsumer

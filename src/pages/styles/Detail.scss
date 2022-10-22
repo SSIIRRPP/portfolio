@@ -6,10 +6,94 @@
   margin: 1rem 0;
   padding: 1rem;
   opacity: 0;
-  /* background-color: $color-1;
-  border-radius: 0.4rem; */
   &__title {
     margin: 0 0 0.8rem;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .Detail {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    &__wrapper {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+  .DetailBody {
+    & .MuiContainer-root {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    &__openButton {
+      & > h2 {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+      }
+    }
+  }
+
+  .DetailCodeSampleFile {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+  .DetailExpandItem {
+    &__container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+  .CodeShower {
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Detail {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    &__wrapper {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+  }
+  .DetailBody {
+    & .MuiContainer-root {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+    &__openButton {
+      & > h2 {
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+      }
+    }
+  }
+  .DetailExpandItem {
+    &__container {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+  }
+  .DetailCodeSampleFile {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    &__multi {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      &--root {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  .CodeShower {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    & > pre {
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
   }
 }
