@@ -53,12 +53,12 @@ const ordNServeServer = {
           cada mesa.
         </p>
         <p>
-          Para esta aplicación, desarrollé también los hooks{" "}
-          <Link to="/code-samples/useAnimation">useAnimation</Link> y{" "}
-          <Link to="/code-samples/useVisibility">useVisibility</Link>, para
-          ofrecer un mejor feedback a los camareros sobre los pedidos que debían
-          ser atendidos lo antes posible, como se explica en sus respectivas
-          páginas.
+          Para esta aplicación, desarrollé también el hook{" "}
+          <Link to="/code-samples/useAnimation">useAnimation</Link> y el
+          componente <Link to="/code-samples/TablesWatcher">TablesWatcher</Link>
+          , para ofrecer un mejor feedback a los camareros sobre los pedidos que
+          debían ser atendidos lo antes posible, como se explica en sus
+          respectivas páginas.
         </p>
         <p>Cuenta con temas claro y oscuro.</p>
       </div>,
@@ -127,9 +127,9 @@ const ordNServeServer = {
         </p>
         <p>
           For this application, I also developed the{" "}
-          <Link to="/code-samples/useAnimation">useAnimation</Link> and{" "}
-          <Link to="/code-samples/useVisibility">useVisibility</Link> hooks, to
-          provide better feedback to the waiters on orders that needed to be
+          <Link to="/code-samples/useAnimation">useAnimation</Link>hook, and the{" "}
+          <Link to="/code-samples/TablesWatcher">TablesWatcher</Link> component,
+          to provide better feedback to the waiters on orders that needed to be
           fulfilled as soon as possible, as explained in their respective pages.
         </p>
         <p>It has light and dark themes.</p>
