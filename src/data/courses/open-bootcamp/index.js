@@ -1,5 +1,3 @@
-import opBtcmpIntroduccionProgramacionCertificate from "./certificates/diploma-introduccion-programacion.pdf";
-
 const opBtcmpIntroduccionProgramacion = {
   name: {
     spa: "Introduccion a la Programación",
@@ -8,7 +6,7 @@ const opBtcmpIntroduccionProgramacion = {
   id: "open-bootcamp-introduccion-programacion",
   date: 1663372800000,
   hours: 9,
-  certificate: opBtcmpIntroduccionProgramacionCertificate,
+  certificate: "diploma-introduccion-programacion.pdf",
 };
 
 const openBootcampCourses = [opBtcmpIntroduccionProgramacion];
@@ -56,6 +54,7 @@ const openBootcamp = {
   },
   totalHours: openBootcampCourses.reduce((a, b) => a + b.hours, 0),
   courses: openBootcampCourses,
+  certificatesRoute: "open-bootcamp",
   link: "https://open-bootcamp.com",
 };
 

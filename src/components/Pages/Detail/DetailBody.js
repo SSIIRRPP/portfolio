@@ -94,7 +94,11 @@ const DetailBody = ({ data, type, animationEnded, animationRef }) => {
                 path="Pages.Detail.DetailBody.bodyListTitle"
               />
               {data.courses.map((c) => (
-                <DetailCourseBadge key={c.id} course={c} />
+                <DetailCourseBadge
+                  key={c.id}
+                  course={c}
+                  certificatesRoute={data.certificatesRoute}
+                />
               ))}
             </ParagraphGenerator>
           </div>

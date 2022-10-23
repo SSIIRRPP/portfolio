@@ -1,22 +1,3 @@
-import softwareEngineeringCertificate from "./certificates/diploma-ingenieria.pdf";
-import basicoDeJavascriptCertificate from "./certificates/diploma-basico-javascript.pdf";
-import fundamentosBasesDatosCertificate from "./certificates/diploma-bd.pdf";
-import platziBootstrapCertificate from "./certificates/diploma-bootstrap.pdf";
-import cssGridLayoutCertificate from "./certificates/diploma-css-grid-layout-2017.pdf";
-import platziFlaskCertificate from "./certificates/diploma-flask.pdf";
-import platziGitGithubCertificate from "./certificates/diploma-git-github.pdf";
-import platziHtmlCssCertificate from "./certificates/diploma-html-css-2019.pdf";
-import platziHtmlPracticoCertificate from "./certificates/diploma-html-practico.pdf";
-import platziJqueryJsCertificate from "./certificates/diploma-jquery-js.pdf";
-import platziOOPCertificate from "./certificates/diploma-oop.pdf";
-import platziMaquetacionCSSCertificate from "./certificates/diploma-practico-css.pdf";
-import platziPreprocesadoresCSSCertificate from "./certificates/diploma-preprocesadores.pdf";
-import platziPythonBasicoCertificate from "./certificates/diploma-python.pdf";
-import platziPythonCertificate from "./certificates/diploma-python-2019.pdf";
-import platziPythonPracticoCertificate from "./certificates/diploma-python-practico.pdf";
-import platziSQLMySQLCertificate from "./certificates/diploma-sql-mysql.pdf";
-import platziTerminalCertificate from "./certificates/diploma-terminal-2019.pdf";
-
 const softwareEngineering = {
   name: {
     spa: "Ingeniería de software",
@@ -25,7 +6,7 @@ const softwareEngineering = {
   id: "platzi-ingenieria",
   date: 1597795200000,
   hours: 16,
-  certificate: softwareEngineeringCertificate,
+  certificate: "diploma-ingenieria.pdf",
 };
 
 const basicoDeJavascript = {
@@ -36,7 +17,7 @@ const basicoDeJavascript = {
   id: "platzi-basico-javascript",
   date: 1607212800000,
   hours: 19,
-  certificate: basicoDeJavascriptCertificate,
+  certificate: "diploma-basico-javascript.pdf",
 };
 
 const fundamentosBasesDatos = {
@@ -47,7 +28,7 @@ const fundamentosBasesDatos = {
   id: "platzi-db-fundamentos",
   date: 1598313600000,
   hours: 26,
-  certificate: fundamentosBasesDatosCertificate,
+  certificate: "diploma-bd.pdf",
 };
 
 const platziBootstrap = {
@@ -58,7 +39,7 @@ const platziBootstrap = {
   id: "platzi-bootstrap",
   date: 1611187200000,
   hours: 8,
-  certificate: platziBootstrapCertificate,
+  certificate: "diploma-bootstrap.pdf",
 };
 
 const cssGridLayout = {
@@ -69,7 +50,7 @@ const cssGridLayout = {
   id: "platzi-css-grid-layout",
   date: 1606694400000,
   hours: 2,
-  certificate: cssGridLayoutCertificate,
+  certificate: "diploma-css-grid-layout-2017.pdf",
 };
 
 const platziFlask = {
@@ -80,7 +61,7 @@ const platziFlask = {
   id: "platzi-flask",
   date: 1605916800000,
   hours: 12,
-  certificate: platziFlaskCertificate,
+  certificate: "diploma-flask.pdf",
 };
 
 const platziGitGithub = {
@@ -91,7 +72,7 @@ const platziGitGithub = {
   id: "platzi-git-github",
   date: 1597104000000,
   hours: 22,
-  certificate: platziGitGithubCertificate,
+  certificate: "diploma-git-github.pdf",
 };
 
 const platziHtmlCss = {
@@ -102,7 +83,7 @@ const platziHtmlCss = {
   id: "platzi-html-css",
   date: 1607040000000,
   hours: 18,
-  certificate: platziHtmlCssCertificate,
+  certificate: "diploma-html-css-2019.pdf",
 };
 
 const platziHtmlPractico = {
@@ -113,7 +94,7 @@ const platziHtmlPractico = {
   id: "platzi-html-practico",
   date: 1607126400000,
   hours: 16,
-  certificate: platziHtmlPracticoCertificate,
+  certificate: "diploma-html-practico.pdf",
 };
 
 const platziJqueryJs = {
@@ -124,7 +105,7 @@ const platziJqueryJs = {
   id: "platzi-jquery-js",
   date: 1607731200000,
   hours: 6,
-  certificate: platziJqueryJsCertificate,
+  certificate: "diploma-jquery-js.pdf",
 };
 
 const platziOOP = {
@@ -135,7 +116,7 @@ const platziOOP = {
   id: "platzi-oop",
   date: 1599004800000,
   hours: 20,
-  certificate: platziOOPCertificate,
+  certificate: "diploma-oop.pdf",
 };
 
 const platziMaquetacionCSS = {
@@ -146,7 +127,7 @@ const platziMaquetacionCSS = {
   id: "platzi-practico-css",
   date: 1607212800000,
   hours: 19,
-  certificate: platziMaquetacionCSSCertificate,
+  certificate: "diploma-practico-css.pdf",
 };
 
 const platziPreprocesadoresCSS = {
@@ -157,7 +138,7 @@ const platziPreprocesadoresCSS = {
   id: "platzi-preprocesadores",
   date: 1610582400000,
   hours: 22,
-  certificate: platziPreprocesadoresCSSCertificate,
+  certificate: "diploma-preprocesadores.pdf",
 };
 
 const platziPythonBasico = {
@@ -168,7 +149,7 @@ const platziPythonBasico = {
   id: "platzi-python",
   date: 1597104000000,
   hours: 16,
-  certificate: platziPythonBasicoCertificate,
+  certificate: "diploma-python.pdf",
 };
 
 const platziPython = {
@@ -179,7 +160,7 @@ const platziPython = {
   id: "platzi-python-2019",
   date: 1597708800000,
   hours: 28,
-  certificate: platziPythonCertificate,
+  certificate: "diploma-python-2019.pdf",
 };
 
 const platziPythonPractico = {
@@ -190,7 +171,7 @@ const platziPythonPractico = {
   id: "platzi-python-practico",
   date: 1599091200000,
   hours: 21,
-  certificate: platziPythonPracticoCertificate,
+  certificate: "diploma-python-practico.pdf",
 };
 
 const platziSQLMySQL = {
@@ -201,7 +182,7 @@ const platziSQLMySQL = {
   id: "platzi-sql-mysql",
   date: 1598313600000,
   hours: 18,
-  certificate: platziSQLMySQLCertificate,
+  certificate: "diploma-sql-mysql.pdf",
 };
 
 const platziTerminal = {
@@ -212,7 +193,7 @@ const platziTerminal = {
   id: "platzi-terminal",
   date: 1593129600000,
   hours: 12,
-  certificate: platziTerminalCertificate,
+  certificate: "diploma-terminal-2019.pdf",
 };
 
 const platziCoursesList = [
@@ -287,6 +268,7 @@ const platziCourses = {
     ],
   },
   totalHours: platziCoursesList.reduce((a, b) => a + b.hours, 0),
+  certificatesRoute: "platzi",
   courses: platziCoursesList,
   link: "https://platzi.com/p/JorgeSirp/",
 };
