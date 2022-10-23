@@ -8,6 +8,7 @@ import {
   useState,
 } from "react";
 import AnimationStepper from "react-animation-stepper";
+import { useLocation } from "react-router-dom";
 import DetailBasicInfo from "../components/Pages/Detail/DetailBasicInfo";
 import DetailBody from "../components/Pages/Detail/DetailBody";
 import AnimationPlaceholder from "../components/util/AnimationPlaceholder";
@@ -26,6 +27,7 @@ const Title = ({ title, animationRef }) => {
 const Detail = ({ data, type }) => {
   const [animationEnded, setAnimationEnded] = useState(false);
   const { scrollToTop } = useContext(MainContext);
+  const location = useLocation();
   const animRef = useRef();
   const { finished } = useAnimation({
     element: animRef,
@@ -82,6 +84,10 @@ const Detail = ({ data, type }) => {
   );
 
   useEffect(() => {
+    setAnimationEnded(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
     scrollToTop();
   }, [scrollToTop]);
 
@@ -93,6 +99,7 @@ const Detail = ({ data, type }) => {
           steps={steps}
           automaticPlay={finished}
           onEnd={onAnimationEnd}
+          update={location.pathname}
         />
       </div>
     </Container>

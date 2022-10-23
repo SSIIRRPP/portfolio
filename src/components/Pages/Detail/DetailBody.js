@@ -37,6 +37,10 @@ const DetailBody = ({ data, type, animationEnded, animationRef }) => {
     }
   }, [params, paramParagraph]);
 
+  useEffect(() => {
+    console.log("animationEnded", animationEnded);
+  }, [animationEnded]);
+
   return (
     <div className="DetailBody" ref={animationRef}>
       <div className="DetailBody__openButton" onClick={() => setOpen(!open)}>
@@ -56,7 +60,9 @@ const DetailBody = ({ data, type, animationEnded, animationRef }) => {
         classes={{ wrapperInner: "DetailBody__expand--wrapper" }}
         timeout={800}
       >
-        {data.text_file ? <DetailCodeSampleFile data={data} /> : null}
+        {data.text_file && animationEnded ? (
+          <DetailCodeSampleFile data={data} />
+        ) : null}
         {data.details ? (
           <LanguageConsumer
             className="DetailBody__expand"
