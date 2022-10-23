@@ -1,13 +1,12 @@
-import { Modal } from "@mui/material";
-import { useCallback, useMemo } from "react";
+import { Suspense, useCallback, useMemo } from "react";
 import { useState } from "react";
-import MainButton from "../Buttons/MainButton";
+import { Modal } from "@mui/material";
 import LanguageConsumer from "../Language/LanguageConsumer";
-import { ReactComponent as CloseIcon } from "../../assets/icons/cross.svg";
 import "./styles/ImageCard.scss";
-import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import Fallback from "../Fallback";
+import { lazy } from "react";
 
-const baseLangPath = "Components.Visual.ImageCard";
+const ImageModal = lazy(() => import("./ImageModal"));
 
 const ImageCard = ({
   className,
@@ -47,41 +46,19 @@ const ImageCard = ({
           <LanguageConsumer element="p" text={text} style={p} />
         ) : null}
       </div>
-      {withModal ? (
+      {withModal && openModal ? (
         <Modal
           classes={{ root: "ImageCard__modal--root" }}
           open={openModal}
           onClose={closeModal}
         >
-          <div className="ImageCard__modal fade-in-comp">
-            <div className="ImageCard__modal--header">
-              <MainButton onClick={closeModal} type="dark">
-                <CloseIcon />
-              </MainButton>
-            </div>
-            <div className="ImageCard__modal--body">
-              <LanguageConsumer
-                className="ImageCard__modal--zoomFeedback"
-                element="span"
-                onClick={closeModal}
-                basePath={baseLangPath}
-                path="Modal.feedback"
-              />
-              <TransformWrapper centerOnInit>
-                <TransformComponent wrapperClass="ImageCard__modal--zoomWrapper">
-                  {imageComponent}
-                </TransformComponent>
-              </TransformWrapper>
-            </div>
-            <div className="ImageCard__modal--footer">
-              <LanguageConsumer
-                element={MainButton}
-                onClick={closeModal}
-                basePath={baseLangPath}
-                path="Modal.closeButton"
-              />
-            </div>
-          </div>
+          <Suspense fallback={<Fallback />}>
+            <ImageModal
+              openModal={openModal}
+              closeModal={closeModal}
+              imageComponent={imageComponent}
+            />
+          </Suspense>
         </Modal>
       ) : null}
     </>
