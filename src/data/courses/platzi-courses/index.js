@@ -196,6 +196,17 @@ const platziTerminal = {
   certificate: "diploma-terminal-2019.pdf",
 };
 
+const typescriptFundamentos = {
+  name: {
+    spa: "Fundamentos de TypeScript",
+    en: "TypeScript Basics",
+  },
+  id: "platzi-typescript",
+  date: 1666558663591,
+  hours: 11,
+  certificate: "diploma-typescript.pdf",
+};
+
 const platziCoursesList = [
   softwareEngineering,
   basicoDeJavascript,
@@ -215,6 +226,7 @@ const platziCoursesList = [
   platziPythonPractico,
   platziSQLMySQL,
   platziTerminal,
+  typescriptFundamentos,
 ];
 
 // sort by certificate date
