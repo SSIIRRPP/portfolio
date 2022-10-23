@@ -272,11 +272,17 @@ const platziCourses = {
           Empecé a tomar estos cursos para construir la plataforma de OrdNServe
         </p>
       </div>,
+      <div>
+        <p>Actualmente intento tomar al menos 4 de estos cursos por semana.</p>
+      </div>,
     ],
     en: [
       <div>
         <p>Courses taken on the Platzi.com platform</p>
         <p>I started taking these courses to build the OrdNServe platform.</p>
+      </div>,
+      <div>
+        <p>I currently try to take at least 4 of these courses per week.</p>
       </div>,
     ],
   },
