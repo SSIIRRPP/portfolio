@@ -37,10 +37,6 @@ const DetailBody = ({ data, type, animationEnded, animationRef }) => {
     }
   }, [params, paramParagraph]);
 
-  useEffect(() => {
-    console.log("animationEnded", animationEnded);
-  }, [animationEnded]);
-
   return (
     <div className="DetailBody" ref={animationRef}>
       <div className="DetailBody__openButton" onClick={() => setOpen(!open)}>
