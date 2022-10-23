@@ -46,7 +46,7 @@ const Detail = ({ data, type }) => {
         />
       ),
       body:
-        data.detail || data.courses || data.text_file ? (
+        data.details || data.courses || data.text_file ? (
           <DetailBody data={data} animationEnded={animationEnded} type={type} />
         ) : (
           <AnimationPlaceholder /> // keep animation working
