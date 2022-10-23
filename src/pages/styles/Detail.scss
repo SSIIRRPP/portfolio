@@ -3,97 +3,97 @@
 
 .Detail {
   @include make-card($color-1);
-  margin: 1rem 0;
-  padding: 1rem;
-  opacity: 0;
+  margin: 1rem 0 !important;
+  padding: 1rem !important;
+  opacity: 0 !important;
   &__title {
-    margin: 0 0 0.8rem;
-    text-align: center;
+    margin: 0 0 0.8rem !important;
+    text-align: center !important;
   }
 }
 
 @media screen and (max-width: 950px) {
   .Detail {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
     &__wrapper {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
     }
   }
   .DetailBody {
     & .MuiContainer-root {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
+      padding-left: 0.75rem !important;
+      padding-right: 0.75rem !important;
     }
     &__openButton {
       & > h2 {
-        margin-left: 0.75rem;
-        margin-right: 0.75rem;
+        margin-left: 0.75rem !important;
+        margin-right: 0.75rem !important;
       }
     }
   }
 
   .DetailCodeSampleFile {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
+    margin-left: 0.75rem !important;
+    margin-right: 0.75rem !important;
   }
   .DetailExpandItem {
     &__container {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
     }
   }
   .CodeShower {
-    padding: 0.5rem;
+    padding: 0.5rem !important;
   }
 }
 
 @media screen and (max-width: 500px) {
   .Detail {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
     &__wrapper {
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
     }
   }
   .DetailBody {
     & .MuiContainer-root {
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
     }
     &__openButton {
       & > h2 {
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;
+        margin-left: 0.25rem !important;
+        margin-right: 0.25rem !important;
       }
     }
   }
   .DetailExpandItem {
     &__container {
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
     }
   }
   .DetailCodeSampleFile {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin-left: 0.25rem !important;
+    margin-right: 0.25rem !important;
     &__multi {
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
       &--root {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
     }
   }
   .CodeShower {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
     & > pre {
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem !important;
     }
   }
 }
