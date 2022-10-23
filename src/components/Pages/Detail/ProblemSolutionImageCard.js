@@ -14,7 +14,6 @@ const imagesStyle = {
 const imageContainerStyle = {
   minWidth: "250px",
   minHeight: "300px",
-  display: "inline-block",
 };
 
 const imageCardStyles = {
