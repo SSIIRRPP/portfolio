@@ -5,10 +5,9 @@
   @include make-card($color-1);
   margin: 1rem 0 !important;
   padding: 1rem !important;
-  opacity: 0 !important;
   &__title {
     margin: 0 0 0.8rem !important;
-    text-align: center !important;
+    text-align: center;
   }
 }
 
