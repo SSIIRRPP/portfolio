@@ -11,6 +11,12 @@ const opBtcmpIntroduccionProgramacion = {
 
 const openBootcampCourses = [opBtcmpIntroduccionProgramacion];
 
+// sort by certificate date, from new to old
+openBootcampCourses.sort(
+  (a, b) => (a.date < b.date ? 1 : b.date < a.date ? -1 : 0),
+  0
+);
+
 const openBootcamp = {
   title: "Open Bootcamp",
   id: "open-bootcamp-courses",

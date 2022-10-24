@@ -229,9 +229,9 @@ const platziCoursesList = [
   typescriptFundamentos,
 ];
 
-// sort by certificate date
+// sort by certificate date, from new to old
 platziCoursesList.sort(
-  (a, b) => (a.date > b.date ? 1 : b.date > a.date ? -1 : 0),
+  (a, b) => (a.date < b.date ? 1 : b.date < a.date ? -1 : 0),
   0
 );
 
