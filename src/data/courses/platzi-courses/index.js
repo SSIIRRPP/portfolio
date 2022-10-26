@@ -207,6 +207,17 @@ const typescriptFundamentos = {
   certificate: "diploma-typescript.pdf",
 };
 
+const typescriptAvanzados = {
+  name: {
+    spa: "TypeScript: Tipos avanzados y Funciones",
+    en: "TypeScript: Advanced Types and Functions",
+  },
+  id: "platzi-typescript-tipos-avanzados",
+  date: 1666803579637,
+  hours: 15,
+  certificate: "diploma-typescript-tipos-avanzados.pdf",
+};
+
 const platziCoursesList = [
   softwareEngineering,
   basicoDeJavascript,
@@ -227,6 +238,7 @@ const platziCoursesList = [
   platziSQLMySQL,
   platziTerminal,
   typescriptFundamentos,
+  typescriptAvanzados,
 ];
 
 // sort by certificate date, from new to old
