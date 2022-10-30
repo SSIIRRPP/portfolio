@@ -1,12 +1,12 @@
-import { Suspense, useCallback, useMemo } from "react";
-import { useState } from "react";
-import { Modal } from "@mui/material";
-import LanguageConsumer from "../Language/LanguageConsumer";
-import "./styles/ImageCard.scss";
-import Fallback from "../Fallback";
-import { lazy } from "react";
+import { Suspense, useCallback, useMemo } from 'react';
+import { useState } from 'react';
+import { Modal } from '@mui/material';
+import LanguageConsumer from '../Language/LanguageConsumer';
+import './styles/ImageCard.scss';
+import Fallback from '../Fallback';
+import { lazy } from 'react';
 
-const ImageModal = lazy(() => import("./ImageModal"));
+const ImageModal = lazy(() => import('./ImageModal'));
 
 const ImageCard = ({
   className,
@@ -27,7 +27,7 @@ const ImageCard = ({
         onClick={withModal ? () => setOpenModal(true) : undefined}
       />
     ),
-    []
+    [src, alt, image, withModal]
   );
 
   const closeModal = useCallback(() => setOpenModal(false), []);
@@ -35,20 +35,24 @@ const ImageCard = ({
   return (
     <>
       <div
-        className={`ImageCard${className ? ` ${className}` : ""}${
-          withModal ? " with-modal" : ""
+        className={`ImageCard${className ? ` ${className}` : ''}${
+          withModal ? ' with-modal' : ''
         }`}
         style={container}
       >
         {imageComponent}
-        {typeof text === "string" ? <p style={p}>{text}</p> : null}
-        {typeof text === "object" ? (
-          <LanguageConsumer element="p" text={text} style={p} />
+        {typeof text === 'string' ? <p style={p}>{text}</p> : null}
+        {typeof text === 'object' ? (
+          <LanguageConsumer
+            element="p"
+            text={text}
+            style={p}
+          />
         ) : null}
       </div>
       {withModal && openModal ? (
         <Modal
-          classes={{ root: "ImageCard__modal--root" }}
+          classes={{ root: 'ImageCard__modal--root' }}
           open={openModal}
           onClose={closeModal}
         >
