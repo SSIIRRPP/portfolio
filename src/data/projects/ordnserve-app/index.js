@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import ExternalLink from "../../../components/Visual/ExternalLink";
+import { Link } from 'react-router-dom';
+import ExternalLink from '../../../components/Visual/ExternalLink';
 import {
   react,
   mongodb,
@@ -12,22 +12,22 @@ import {
   awsLambda,
   awsCloudfront,
   sass,
-} from "../../technologies";
+} from '../../technologies';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 /* import pruebaJs from "!!raw-loader!./files/test.js"; */
 /* import CodeShower from "../../../components/CodeShower"; */
 
 const ordNServeApp = {
-  title: "OrdNServe App",
-  id: "ordnserve-app",
+  title: 'OrdNServe App',
+  id: 'ordnserve-app',
   short: {
     en: [
       <span className="info-span">Part of the OrdNServe project.</span>,
-      "This application was designed to allow restaurant customers to order directly from their table without the intervention of the waiter.",
+      'This application was designed to allow restaurant customers to order directly from their table without the intervention of the waiter.',
     ],
     spa: [
       <span className="info-span">Parte del proyecto OrdNServe.</span>,
-      "Esta aplicación está diseñada para que los clientes de un restaurante puedan pedir directamente desde su mesa sin intervención del camarero.",
+      'Esta aplicación está diseñada para que los clientes de un restaurante puedan pedir directamente desde su mesa sin intervención del camarero.',
     ],
   },
   details: {
@@ -43,7 +43,7 @@ const ordNServeApp = {
       <div>
         <h4 className="center">UI/UX</h4>
         <p>
-          Cuenta con una{" "}
+          Cuenta con una{' '}
           <Link to="/code-samples/NotificationsMachine">
             barra superior de notificaciones
           </Link>
@@ -61,7 +61,7 @@ const ordNServeApp = {
           .
           <br />
           <br /> El proceso de pedido se realiza a través de una state machine
-          creada con{" "}
+          creada con{' '}
           <ExternalLink href="https://xstate.js.org/">XState</ExternalLink>
           .
           <br />
@@ -72,7 +72,7 @@ const ordNServeApp = {
           sincronizado con el estado del pedido en el servidor
           <br />
           <br />
-          Ésta se comunica con el backend a través de{" "}
+          Ésta se comunica con el backend a través de{' '}
           <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">
             WebSockets
           </ExternalLink>
@@ -89,7 +89,7 @@ const ordNServeApp = {
         <h4 className="center">Autenticación</h4>
         <p>
           Está provista de inicio de sesión con Google y Facebook, así como
-          inicio de sesión con correo electrónico y contraseña, provisto por{" "}
+          inicio de sesión con correo electrónico y contraseña, provisto por{' '}
           <ExternalLink href="https://aws.amazon.com/es/cognito/">
             Amazon Cógnito
           </ExternalLink>
@@ -108,7 +108,7 @@ const ordNServeApp = {
       <div>
         <h4 className="center">UI/UX</h4>
         <p>
-          It has a{" "}
+          It has a{' '}
           <Link to="/code-samples/NotificationsMachine">
             top notification bar
           </Link>
@@ -125,7 +125,7 @@ const ordNServeApp = {
           guiding the user through the process .
           <br />
           <br /> The ordering process is carried out through a state machine
-          created with{" "}
+          created with{' '}
           <ExternalLink href="https://xstate.js.org/">XState</ExternalLink>
           .
           <br />
@@ -135,7 +135,7 @@ const ordNServeApp = {
           so that it stays in sync with the order status on the server.
           <br />
           <br />
-          It communicates with the backend via{" "}
+          It communicates with the backend via{' '}
           <ExternalLink href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket">
             WebSockets
           </ExternalLink>
@@ -150,7 +150,7 @@ const ordNServeApp = {
         <h4 className="center">Authentication</h4>
         <p>
           It is provided with Google and Facebook login, as well as login with
-          email and password, provided by{" "}
+          email and password, provided by{' '}
           <ExternalLink href="https://aws.amazon.com/es/cognito/">
             Amazon Cognito
           </ExternalLink>
@@ -159,7 +159,7 @@ const ordNServeApp = {
       </div>,
     ],
   },
-  link: "https://app.ordnserve.com",
+  link: 'https://app.ordnserve.com',
   github: {
     private: true,
     link: null,
@@ -178,9 +178,9 @@ const ordNServeApp = {
     ],
   },
   time: {
-    from: new Date(1614729600000),
+    from: new Date(1590969600000),
   },
-  type: "Web App",
+  type: 'Web App',
   mobileFirst: true,
 };
 
