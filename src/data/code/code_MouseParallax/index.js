@@ -61,7 +61,7 @@ const code_MouseParallax = {
       <div>
         <p>
           Extends the{' '}
-          <ExternalLink to="https://www.npmjs.com/package/react-parallax-mouse">
+          <ExternalLink href="https://www.npmjs.com/package/react-parallax-mouse">
             "react-parallax-mouse"
           </ExternalLink>{' '}
           NPM package, wrapping it to work along the rest of the project's
@@ -86,7 +86,7 @@ const code_MouseParallax = {
       <div>
         <p>
           Extiende el paquete de npm{' '}
-          <ExternalLink to="https://www.npmjs.com/package/react-parallax-mouse">
+          <ExternalLink href="https://www.npmjs.com/package/react-parallax-mouse">
             "react-parallax-mouse"
           </ExternalLink>
           , envolviéndolo para que funcione junto con el resto de los
