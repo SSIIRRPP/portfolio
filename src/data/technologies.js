@@ -1,132 +1,133 @@
-import { ReactComponent as JavaScriptIcon } from "../assets/icons/tecs/javascript.svg";
-import { ReactComponent as PythonIcon } from "../assets/icons/tecs/python.svg";
-import { ReactComponent as ReactIcon } from "../assets/icons/tecs/reactjs.svg";
-import { ReactComponent as AWSIcon } from "../assets/icons/tecs/aws.svg";
-import { ReactComponent as ExpressIcon } from "../assets/icons/tecs/expressjs.svg";
-import { ReactComponent as MongoDBIcon } from "../assets/icons/tecs/mongodb.svg";
-import { ReactComponent as NextJSIcon } from "../assets/icons/tecs/nextjs.svg";
-import { ReactComponent as NodeJSIcon } from "../assets/icons/tecs/nodejs.svg";
-import { ReactComponent as ReduxIcon } from "../assets/icons/tecs/redux.svg";
-import { ReactComponent as XStateIcon } from "../assets/icons/tecs/xstate.svg";
-import { ReactComponent as GitHubIcon } from "../assets/icons/tecs/github.svg";
-import { ReactComponent as AWSDynamoDbIcon } from "../assets/icons/tecs/amazondynamodb.svg";
-import { ReactComponent as AWSAPIGatewayIcon } from "../assets/icons/tecs/amazonapigateway.svg";
-import { ReactComponent as AWSEC2Icon } from "../assets/icons/tecs/amazonec2.svg";
-import { ReactComponent as AWSS3Icon } from "../assets/icons/tecs/amazons3.svg";
-import { ReactComponent as AWSLambdaIcon } from "../assets/icons/tecs/awslambda.svg";
-import { ReactComponent as AWSCloudfrontIcon } from "../assets/icons/tecs/awscloudfront.svg";
-import { ReactComponent as ServerlessIcon } from "../assets/icons/tecs/serverless.svg";
-import { ReactComponent as SASSIcon } from "../assets/icons/tecs/sass.svg";
+import { ReactComponent as JavaScriptIcon } from '../assets/icons/tecs/javascript.svg';
+import { ReactComponent as PythonIcon } from '../assets/icons/tecs/python.svg';
+import { ReactComponent as ReactIcon } from '../assets/icons/tecs/reactjs.svg';
+import { ReactComponent as AWSIcon } from '../assets/icons/tecs/aws.svg';
+import { ReactComponent as ExpressIcon } from '../assets/icons/tecs/expressjs.svg';
+import { ReactComponent as MongoDBIcon } from '../assets/icons/tecs/mongodb.svg';
+import { ReactComponent as NextJSIcon } from '../assets/icons/tecs/nextjs.svg';
+import { ReactComponent as NodeJSIcon } from '../assets/icons/tecs/nodejs.svg';
+import { ReactComponent as ReduxIcon } from '../assets/icons/tecs/redux.svg';
+import { ReactComponent as XStateIcon } from '../assets/icons/tecs/xstate.svg';
+import { ReactComponent as GitHubIcon } from '../assets/icons/tecs/github.svg';
+import { ReactComponent as AWSDynamoDbIcon } from '../assets/icons/tecs/amazondynamodb.svg';
+import { ReactComponent as AWSAPIGatewayIcon } from '../assets/icons/tecs/amazonapigateway.svg';
+import { ReactComponent as AWSEC2Icon } from '../assets/icons/tecs/amazonec2.svg';
+import { ReactComponent as AWSS3Icon } from '../assets/icons/tecs/amazons3.svg';
+import { ReactComponent as AWSLambdaIcon } from '../assets/icons/tecs/awslambda.svg';
+import { ReactComponent as AWSCloudfrontIcon } from '../assets/icons/tecs/awscloudfront.svg';
+import { ReactComponent as ServerlessIcon } from '../assets/icons/tecs/serverless.svg';
+import { ReactComponent as SASSIcon } from '../assets/icons/tecs/sass.svg';
+import { ReactComponent as TypeScriptIcon } from '../assets/icons/tecs/typescript.svg';
 
-const greyAWSBackground = "rgb(78 78 78)";
+const greyAWSBackground = 'rgb(78 78 78)';
 
 export const javascript = {
-  name: "JavaScript",
-  id: "javascript",
+  name: 'JavaScript',
+  id: 'javascript',
   level: 3.5,
   icon: JavaScriptIcon,
   contStyle: {
-    backgroundColor: "black",
+    backgroundColor: 'black',
   },
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#F7DF1E",
+    fill: '#F7DF1E',
     style: {
-      backgroundColor: "black",
+      backgroundColor: 'black',
     },
   },
-  iconCorrection: "2px 0 0",
+  iconCorrection: '2px 0 0',
 };
 
 export const python = {
-  name: "Python",
-  id: "python",
+  name: 'Python',
+  id: 'python',
   level: 1.2,
   icon: PythonIcon,
   iconProps: {
-    fill: "#3776AB",
+    fill: '#3776AB',
   },
-  iconCorrection: "2px 0 0",
+  iconCorrection: '2px 0 0',
 };
 
 export const react = {
-  name: "ReactJS",
-  id: "react",
+  name: 'ReactJS',
+  id: 'react',
   level: 4,
   icon: ReactIcon,
   iconProps: {
     style: {
-      fill: "#415a77",
+      fill: '#415a77',
     },
   },
 };
 
 export const nextjs = {
-  name: "NextJS",
-  id: "nextjs",
+  name: 'NextJS',
+  id: 'nextjs',
   level: 2,
   icon: NextJSIcon,
 };
 
 export const aws = {
-  name: "Amazon Web Services",
-  id: "aws",
+  name: 'Amazon Web Services',
+  id: 'aws',
   level: 2.5,
   icon: AWSIcon,
-  iconCorrection: "2px 1px 0 1px",
+  iconCorrection: '2px 1px 0 1px',
 };
 
 export const redux = {
-  name: "Redux",
-  id: "redux",
+  name: 'Redux',
+  id: 'redux',
   level: 4,
   icon: ReduxIcon,
-  iconCorrection: "0 0 3px 0",
+  iconCorrection: '0 0 3px 0',
 };
 
 export const mongodb = {
-  name: "MongoDB",
-  id: "mongodb",
+  name: 'MongoDB',
+  id: 'mongodb',
   level: 3,
   icon: MongoDBIcon,
-  iconCorrection: "0 0 0 2px",
+  iconCorrection: '0 0 0 2px',
 };
 
 export const nodejs = {
-  name: "NodeJS",
-  id: "nodejs",
+  name: 'NodeJS',
+  id: 'nodejs',
   level: 2.5,
   icon: NodeJSIcon,
-  contStyle: { backgroundColor: "#3c3c3c" },
-  iconCorrection: "0 1px 0 0",
+  contStyle: { backgroundColor: '#3c3c3c' },
+  iconCorrection: '0 1px 0 0',
 };
 
 export const expressjs = {
-  name: "ExpressJS",
-  id: "expressjs",
+  name: 'ExpressJS',
+  id: 'expressjs',
   level: 2.5,
   icon: ExpressIcon,
 };
 
 export const xstate = {
-  name: "XState",
-  id: "xstate",
+  name: 'XState',
+  id: 'xstate',
   level: 4,
   icon: XStateIcon,
-  iconCorrection: "0 0 0 1px",
+  iconCorrection: '0 0 0 1px',
 };
 
 export const github = {
-  name: "GitHub",
-  id: "github",
+  name: 'GitHub',
+  id: 'github',
   level: 3,
   icon: GitHubIcon,
 };
 
 export const awsAPIGateway = {
-  name: "AWS API Gateway",
-  id: "aws-api-gateway",
+  name: 'AWS API Gateway',
+  id: 'aws-api-gateway',
   level: 4,
   icon: AWSAPIGatewayIcon,
   contStyle: {
@@ -135,14 +136,14 @@ export const awsAPIGateway = {
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#FF4F8B",
+    fill: '#FF4F8B',
   },
-  iconCorrection: "0 0 0 2px",
+  iconCorrection: '0 0 0 2px',
 };
 
 export const awsEC2 = {
-  name: "AWS EC2",
-  id: "aws-ec2",
+  name: 'AWS EC2',
+  id: 'aws-ec2',
   level: 2.8,
   icon: AWSEC2Icon,
   contStyle: {
@@ -151,13 +152,13 @@ export const awsEC2 = {
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#FF9900",
+    fill: '#FF9900',
   },
 };
 
 export const awsS3 = {
-  name: "AWS S3",
-  id: "aws-s3",
+  name: 'AWS S3',
+  id: 'aws-s3',
   level: 3.8,
   icon: AWSS3Icon,
   contStyle: {
@@ -166,14 +167,14 @@ export const awsS3 = {
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#569A31",
+    fill: '#569A31',
   },
-  iconCorrection: "1px 0 0 2px",
+  iconCorrection: '1px 0 0 2px',
 };
 
 export const awsLambda = {
-  name: "AWS Lambda",
-  id: "aws-lambda",
+  name: 'AWS Lambda',
+  id: 'aws-lambda',
   level: 3.8,
   icon: AWSLambdaIcon,
   contStyle: {
@@ -182,13 +183,13 @@ export const awsLambda = {
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#FF9900",
+    fill: '#FF9900',
   },
 };
 
 export const awsCloudfront = {
-  name: "AWS Cloudfront",
-  id: "aws-cloudfront",
+  name: 'AWS Cloudfront',
+  id: 'aws-cloudfront',
   level: 3.8,
   icon: AWSCloudfrontIcon,
   contStyle: {
@@ -197,13 +198,13 @@ export const awsCloudfront = {
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#FF9900",
+    fill: '#FF9900',
   },
 };
 
 export const awsDynamoDb = {
-  name: "AWS DynamoDb",
-  id: "aws-dynamo-db",
+  name: 'AWS DynamoDb',
+  id: 'aws-dynamo-db',
   level: 3.8,
   icon: AWSDynamoDbIcon,
   contStyle: {
@@ -212,35 +213,47 @@ export const awsDynamoDb = {
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#4053D6",
+    fill: '#4053D6',
   },
-  iconCorrection: "0 0 0 4px",
+  iconCorrection: '0 0 0 4px',
 };
 
 export const serverless = {
-  name: "Serverless framework",
-  id: "serverless",
+  name: 'Serverless framework',
+  id: 'serverless',
   level: 3.5,
   icon: ServerlessIcon,
   contStyle: {
-    backgroundColor: "black",
+    backgroundColor: 'black',
   },
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#FD5750",
+    fill: '#FD5750',
   },
 };
 
 export const sass = {
-  name: "SASS",
-  id: "sass",
+  name: 'SASS',
+  id: 'sass',
   level: 3.5,
   icon: SASSIcon,
   iconProps: {
     width: 25,
     height: 25,
-    fill: "#FD5750",
+    fill: '#FD5750',
+  },
+};
+
+export const typescript = {
+  name: 'TypeScript',
+  id: 'typescript',
+  level: 2.5,
+  icon: TypeScriptIcon,
+  iconProps: {
+    width: 30,
+    height: 30,
+    margin: '-3px',
   },
 };
 
@@ -264,6 +277,7 @@ const technologies = [
   awsDynamoDb,
   serverless,
   sass,
+  typescript,
 ].sort((a, b) => {
   if (a.name > b.name) {
     return 1;
