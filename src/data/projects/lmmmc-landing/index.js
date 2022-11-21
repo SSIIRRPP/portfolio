@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import ExternalLink from "../../../components/Visual/ExternalLink";
+import { Link } from 'react-router-dom';
+import ExternalLink from '../../../components/Visual/ExternalLink';
 import {
   react,
   mongodb,
@@ -10,14 +10,14 @@ import {
   awsS3,
   awsCloudfront,
   sass,
-} from "../../technologies";
+} from '../../technologies';
 
 const LMMMCLanding = {
-  title: "La Manga Mar Menor Charter",
-  id: "lmmmc-landing",
+  title: 'La Manga Mar Menor Charter',
+  id: 'lmmmc-landing',
   short: {
-    spa: "Landing page hecha para una empresa de alquiler de barcos.",
-    en: "Landing page made for a boat rental company.",
+    spa: 'Landing page hecha para una empresa de alquiler de barcos.',
+    en: 'Landing page made for a boat rental company.',
   },
   details: {
     spa: [
@@ -33,23 +33,23 @@ const LMMMCLanding = {
       <div>
         <h4 className="center">UI/UX</h4>
         <p>
-          Cuenta con componentes componentes como{" "}
+          Cuenta con componentes componentes como{' '}
           <Link to="/code-samples/AdjustableParallaxBanner">
             AdjustableParallaxBanner
-          </Link>{" "}
-          o <Link to="/code-samples/MouseParallax">MouseParallax</Link>, that
-          allow components to be declared declaratively, and that give the user
-          a more dynamic experience by providing backgrounds that change size
-          and position as the user navigates through the page.
+          </Link>{' '}
+          o <Link to="/code-samples/MouseParallax">MouseParallax</Link>, que
+          ofrecen al usuario una experiencia más dinámica al proporcionar fondos
+          que cambian de tamaño y posición a medida que el usuario navega por la
+          página.
         </p>
         <p>
-          También cuenta con el componente{" "}
+          También cuenta con el componente{' '}
           <Link to="/code-samples/ImageCarousel">ImageCarousel</Link>,
-          desarrollado sobre el{" "}
+          desarrollado sobre el{' '}
           <ExternalLink href="https://react-bootstrap.github.io/components/carousel/">
             Carousel de React Bootstrap
           </ExternalLink>
-          , que permite declarar las diapositicas de forma declarativa,
+          , que permite declarar las diapositivas de forma declarativa,
           permitiendo así modificarlas o añadir más rápidamente.
         </p>
         <p>Cuenta con temas claro y oscuro</p>
@@ -78,18 +78,18 @@ const LMMMCLanding = {
       <div>
         <h4 className="center">UI/UX</h4>
         <p>
-          It has components such as{" "}
+          It has components such as{' '}
           <Link to="/code-samples/AdjustableParallaxBanner">
             AdjustableParallaxBanner
-          </Link>{" "}
+          </Link>{' '}
           or <Link to="/code-samples/MouseParallax">MouseParallax</Link>, that
           give the user a more dynamic experience, providing backgrounds that
           change size and position as the user navigates through the page.
         </p>
         <p>
-          It also has the{" "}
+          It also has the{' '}
           <Link to="/code-samples/ImageCarousel">ImageCarousel</Link> component,
-          developed on top of the{" "}
+          developed on top of the{' '}
           <ExternalLink href="https://react-bootstrap.github.io/components/carousel/">
             Carousel from React Bootstrap
           </ExternalLink>
@@ -109,10 +109,10 @@ const LMMMCLanding = {
       </div>,
     ],
   },
-  link: "https://www.lamangamarmenorcharter.com?lang=en",
+  link: 'https://www.lamangamarmenorcharter.com?lang=en',
   github: {
     private: false,
-    link: "https://github.com/SSIIRRPP/LMMMC-landing",
+    link: 'https://github.com/SSIIRRPP/LMMMC-landing',
   },
   stack: {
     front: [react, sass],
@@ -130,7 +130,7 @@ const LMMMCLanding = {
     from: new Date(1613088000000),
     to: new Date(1618444800000),
   },
-  type: "Landing Page",
+  type: 'Landing Page',
   mobileFirst: true,
 };
 
